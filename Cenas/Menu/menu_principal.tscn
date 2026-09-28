@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://b0t7nqpdgpn0u"]
+
+[ext_resource type="Script" uid="uid://clx3obtsgipi6" path="res://Scripts/menu_principal.gd" id="1_vy7r3"]
+[ext_resource type="Texture2D" uid="uid://cneat31flmiow" path="res://Imagens/TelaFundo.jpg" id="2_xjxs1"]
+[ext_resource type="Texture2D" uid="uid://7qcbhstg4txe" path="res://Imagens/ImagemMenu.png" id="3_djxk1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ul6ys"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ns3he"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fa1tu"]
+
+[node name="Control" type="Control" unique_id=1553196969]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vy7r3")
+metadata/_edit_lock_ = true
+
+[node name="TelaFundo" type="Sprite2D" parent="." unique_id=1132423488]
+position = Vector2(576.3849, 324.97845)
+scale = Vector2(0.18187925, 0.18422551)
+texture = ExtResource("2_xjxs1")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1329281515]
+layout_mode = 0
+offset_left = 263.0
+offset_top = 107.000015
+offset_right = 874.0
+offset_bottom = 507.0
+texture = ExtResource("3_djxk1")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="BotaoSair" type="Button" parent="." unique_id=1055337876]
+layout_mode = 0
+offset_left = 484.77353
+offset_top = 371.59088
+offset_right = 652.52026
+offset_bottom = 413.1273
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ul6ys")
+metadata/_edit_lock_ = true
+
+[node name="BotaoJogar" type="Button" parent="." unique_id=2075009052]
+layout_mode = 0
+offset_left = 485.16785
+offset_top = 241.0822
+offset_right = 651.9835
+offset_bottom = 282.27917
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ns3he")
+metadata/_edit_lock_ = true
+
+[node name="BotaoFases" type="Button" parent="." unique_id=1305394212]
+layout_mode = 0
+offset_left = 485.38666
+offset_top = 306.7698
+offset_right = 651.9569
+offset_bottom = 347.75903
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fa1tu")
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="BotaoSair" to="." method="_on_botao_sair_pressed"]
+[connection signal="pressed" from="BotaoJogar" to="." method="_on_botao_jogar_pressed"]
+[connection signal="pressed" from="BotaoFases" to="." method="_on_botao_fases_pressed"]

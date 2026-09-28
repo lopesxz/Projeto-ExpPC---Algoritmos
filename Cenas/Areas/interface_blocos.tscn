@@ -1,0 +1,257 @@
+[gd_scene format=3 uid="uid://bjcnsbiqoy4o2"]
+
+[ext_resource type="Script" uid="uid://c00ro0yueuvdi" path="res://Scripts/script_cronometro.gd" id="1_7losc"]
+[ext_resource type="Script" uid="uid://02aw8fc8gris" path="res://Scripts/area_montagem.gd" id="2_geqtr"]
+[ext_resource type="Texture2D" uid="uid://via4ht7u6i1m" path="res://Imagens/light_grey_dots_background.jpg" id="3_ixw4m"]
+[ext_resource type="Texture2D" uid="uid://mg20d6qxfnk6" path="res://Imagens/lixeira.png" id="4_jb6jx"]
+[ext_resource type="Texture2D" uid="uid://do2so7ndqj0pl" path="res://Imagens/pra-cima.png" id="5_craoi"]
+[ext_resource type="Texture2D" uid="uid://b43ep786sihe5" path="res://Imagens/botao-play.png" id="6_glwll"]
+[ext_resource type="Script" uid="uid://hrmrhhytevgf" path="res://Scripts/area_estoque.gd" id="7_sju4l"]
+[ext_resource type="PackedScene" uid="uid://bicix0u82f5dk" path="res://Cenas/Areas/bloco_comando.tscn" id="8_oxx4j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_migug"]
+bg_color = Color(0.10980392, 0.49411765, 0.7882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gp4g"]
+bg_color = Color(0.9999991, 0.24542925, 0.18608844, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y36xt"]
+bg_color = Color(1, 0, 0, 1)
+
+[node name="InterfaceBlocos" type="CanvasLayer" unique_id=571148182]
+script = ExtResource("1_7losc")
+
+[node name="ContadorLabel" type="Label" parent="." unique_id=193220672]
+modulate = Color(0, 0, 0, 1)
+z_index = 10
+offset_left = 976.0
+offset_top = 613.0
+offset_right = 1140.0
+offset_bottom = 636.0
+text = "Tentativas: 0 "
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="." unique_id=1590961223]
+layout_mode = 3
+anchor_top = -0.0046296297
+anchor_bottom = -0.0046296297
+offset_left = 645.0
+offset_top = 4.0
+offset_right = 1155.0
+offset_bottom = 652.0
+metadata/_edit_use_anchors_ = true
+
+[node name="AreaMontagem" type="ColorRect" parent="Control" unique_id=407638112]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.98608965
+offset_bottom = -238.98608
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.6766099, 0.8710071, 0.86211, 1)
+script = ExtResource("2_geqtr")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Control/AreaMontagem" unique_id=1161321567]
+modulate = Color(0.69803923, 1, 1, 1)
+layout_mode = 0
+offset_right = 511.0
+offset_bottom = 400.0
+texture = ExtResource("3_ixw4m")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="ListaBlocos" type="VFlowContainer" parent="Control/AreaMontagem" unique_id=1606281680]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 72.0
+offset_right = 448.0
+offset_bottom = 391.0
+metadata/_edit_lock_ = true
+
+[node name="ApagarTodos" type="Button" parent="Control/AreaMontagem" unique_id=437821649]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 7.0
+offset_right = 82.0
+offset_bottom = 52.0
+icon = ExtResource("4_jb6jx")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SetaBaixo" type="Button" parent="Control/AreaMontagem" unique_id=1823540583]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 52.0
+offset_right = 531.0
+offset_bottom = 97.0
+rotation = 3.1415927
+icon = ExtResource("5_craoi")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SetaCima" type="Button" parent="Control/AreaMontagem" unique_id=1871838562]
+layout_mode = 0
+offset_left = 372.0
+offset_top = 7.0
+offset_right = 422.0
+offset_bottom = 52.0
+icon = ExtResource("5_craoi")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Apagar1" type="Button" parent="Control/AreaMontagem" unique_id=1463138779]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 7.0
+offset_right = 140.0
+offset_bottom = 52.0
+text = "1"
+icon = ExtResource("4_jb6jx")
+expand_icon = true
+
+[node name="Executar" type="Button" parent="Control/AreaMontagem" unique_id=464251171]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 7.0
+offset_right = 324.0
+offset_bottom = 52.0
+text = "EXECUTAR"
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/AreaMontagem/Executar" unique_id=1133661721]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 3.0
+offset_right = 50.0
+offset_bottom = 43.0
+texture = ExtResource("6_glwll")
+expand_mode = 4
+
+[node name="ConfirmacaoApagar" type="Panel" parent="Control/AreaMontagem" unique_id=1281030680]
+visible = false
+layout_mode = 0
+offset_left = 93.0
+offset_top = 169.0
+offset_right = 419.0
+offset_bottom = 268.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_migug")
+
+[node name="TextoConfirmacaoLabel" type="Label" parent="Control/AreaMontagem/ConfirmacaoApagar" unique_id=1424713568]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 13.0
+offset_right = 296.0
+offset_bottom = 36.0
+text = "Você realmente quer apagar tudo?"
+
+[node name="BotaoSim" type="Button" parent="Control/AreaMontagem/ConfirmacaoApagar" unique_id=647798277]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 45.0
+offset_right = 137.0
+offset_bottom = 77.0
+text = "SIM"
+
+[node name="BotaoNao" type="Button" parent="Control/AreaMontagem/ConfirmacaoApagar" unique_id=2015278662]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 46.0
+offset_right = 269.0
+offset_bottom = 77.0
+text = "NÃO"
+
+[node name="SelecioneLabel" type="Label" parent="Control/AreaMontagem" unique_id=1352868731]
+visible = false
+layout_mode = 0
+offset_left = 86.0
+offset_top = 169.0
+offset_right = 413.0
+offset_bottom = 258.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_2gp4g")
+text = "SELECIONE UM BLOCO!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AreaEstoque" type="ColorRect" parent="Control" unique_id=1309929412]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 76.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3647059, 0.43137255, 0.43137255, 1)
+script = ExtResource("7_sju4l")
+metadata/_edit_lock_ = true
+
+[node name="Avancar" parent="Control/AreaEstoque" unique_id=1887600487 instance=ExtResource("8_oxx4j")]
+layout_mode = 1
+offset_left = 138.0
+offset_top = 17.0
+offset_right = -134.0
+offset_bottom = -186.0
+texto_do_bloco = "AVANÇAR"
+
+[node name="Virar Esquerda" parent="Control/AreaEstoque" unique_id=602368564 instance=ExtResource("8_oxx4j")]
+modulate = Color(1, 0.64705884, 0, 1)
+layout_mode = 1
+offset_left = 9.0
+offset_top = 72.0
+offset_right = -263.0
+offset_bottom = -131.0
+texto_do_bloco = "VIRAR À ESQUERDA"
+nome_comando = "VIRAR_ESQUERDA"
+
+[node name="Virar Direita" parent="Control/AreaEstoque" unique_id=131426477 instance=ExtResource("8_oxx4j")]
+modulate = Color(1, 0.64705884, 0, 1)
+layout_mode = 1
+offset_left = 264.0
+offset_top = 72.0
+offset_right = -8.0
+offset_bottom = -131.0
+tooltip_text = "AA"
+texto_do_bloco = "VIRAR À DIREITA"
+nome_comando = "VIRAR_DIREITA"
+
+[node name="TempoTotalLabel" type="Label" parent="Control" unique_id=1985459355]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 608.0
+offset_right = 156.0
+offset_bottom = 640.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Tempo: 00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CronometroTimer" type="Timer" parent="Control" unique_id=893753917]
+autostart = true
+
+[node name="LimiteLabel" type="Label" parent="." unique_id=669698087]
+visible = false
+offset_left = 645.0
+offset_top = 402.0
+offset_right = 1152.0
+offset_bottom = 650.0
+mouse_filter = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_y36xt")
+text = "LIMITE DE INSTRUÇÕES ATINGIDO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Control/AreaMontagem/ApagarTodos" to="Control/AreaMontagem" method="_on_apagar_todos_pressed"]
+[connection signal="pressed" from="Control/AreaMontagem/SetaBaixo" to="Control/AreaMontagem" method="_on_seta_baixo_pressed"]
+[connection signal="pressed" from="Control/AreaMontagem/SetaCima" to="Control/AreaMontagem" method="_on_seta_cima_pressed"]
+[connection signal="pressed" from="Control/AreaMontagem/Apagar1" to="Control/AreaMontagem" method="_on_apagar_1_pressed"]
+[connection signal="pressed" from="Control/AreaMontagem/Executar" to="Control/AreaMontagem" method="_on_executar_pressed"]
+[connection signal="pressed" from="Control/AreaMontagem/ConfirmacaoApagar/BotaoSim" to="Control/AreaMontagem" method="_on_botao_sim_pressed"]
+[connection signal="pressed" from="Control/AreaMontagem/ConfirmacaoApagar/BotaoNao" to="Control/AreaMontagem" method="_on_botao_nao_pressed"]
+[connection signal="timeout" from="Control/CronometroTimer" to="." method="_on_cronometro_timer_timeout"]

@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dh6dbpeeevup6"]
+
+[ext_resource type="Script" uid="uid://1ncn0rwxd8li" path="res://Scripts/tela_nome.gd" id="1_g2c0o"]
+[ext_resource type="Texture2D" uid="uid://cneat31flmiow" path="res://Imagens/TelaFundo.jpg" id="2_rcrnl"]
+[ext_resource type="Texture2D" uid="uid://864j17r45tp5" path="res://Imagens/confirmacao.png" id="2_u8vb0"]
+[ext_resource type="Texture2D" uid="uid://lj0pqe7mm04m" path="res://Imagens/ImagemNome.png" id="3_uue5v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g4v7s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_54na0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yf5fn"]
+
+[node name="Node2D" type="Node2D" unique_id=1465700509]
+script = ExtResource("1_g2c0o")
+
+[node name="TelaFundo" type="Sprite2D" parent="." unique_id=489531541]
+position = Vector2(576.25, 326)
+scale = Vector2(0.18199782, 0.18365604)
+texture = ExtResource("2_rcrnl")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1306167990]
+offset_left = 358.0
+offset_top = 171.0
+offset_right = 790.0
+offset_bottom = 401.0
+texture = ExtResource("3_uue5v")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=177456356]
+offset_left = 472.0
+offset_top = 274.0
+offset_right = 633.0
+offset_bottom = 307.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_54na0")
+
+[node name="Button" type="Button" parent="." unique_id=312217836]
+offset_left = 654.0
+offset_top = 274.0
+offset_right = 691.0
+offset_bottom = 306.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yf5fn")
+icon = ExtResource("2_u8vb0")
+icon_alignment = 1
+expand_icon = true
+
+[node name="AvisoLabel" type="Label" parent="." unique_id=1966586290]
+visible = false
+offset_left = 460.0
+offset_top = 312.0
+offset_right = 689.0
+offset_bottom = 339.0
+text = "O nome não pode ficar vazio.."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_botao_confirmar_pressed"]

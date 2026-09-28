@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bicix0u82f5dk"]
+
+[ext_resource type="Script" uid="uid://d2g6u015je6pr" path="res://Scripts/clique_mouse.gd" id="1_o27yj"]
+
+[node name="BlocoComando" type="Control" unique_id=1887600487]
+custom_minimum_size = Vector2(180, 40)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -964.0
+offset_bottom = -603.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_o27yj")
+texto_do_bloco = "VIRAR_ESQUERDA"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1158494344]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.8745098, 0.85882354, 0.05490196, 1)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=2036493912]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+pivot_offset = Vector2(90, 19)
+text = "VIRAR À ESQUERDA"
+horizontal_alignment = 1
+vertical_alignment = 1

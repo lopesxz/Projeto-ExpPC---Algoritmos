@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://dc86ss5olx1ii"]
+
+[ext_resource type="Script" uid="uid://iooradluo8j" path="res://Cenas/Menu/painel_fases.gd" id="1_gdx57"]
+[ext_resource type="Texture2D" uid="uid://cneat31flmiow" path="res://Imagens/TelaFundo.jpg" id="1_gt2up"]
+[ext_resource type="Texture2D" uid="uid://cufspnmb3ncj2" path="res://Imagens/ImagemFases.png" id="3_xgbe7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g4v7s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yf5fn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_57qmd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d0u6y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3gngh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fcnqv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7numd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p1u0y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5s0fj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_33x8s"]
+
+[node name="Control" type="Control" unique_id=2007290390]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.3651505
+offset_top = -1.0999756
+offset_right = 5.499878
+offset_bottom = -1.0999756
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gdx57")
+
+[node name="TelaFundo" type="Sprite2D" parent="." unique_id=720494095]
+position = Vector2(577.7599, 323.54968)
+scale = Vector2(0.18164337, 0.18383665)
+texture = ExtResource("1_gt2up")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=382688229]
+layout_mode = 0
+offset_left = 325.38782
+offset_top = 153.3006
+offset_right = 823.7588
+offset_bottom = 462.57925
+texture = ExtResource("3_xgbe7")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Fase1" type="Button" parent="." unique_id=1802646344]
+layout_mode = 0
+offset_left = 430.87106
+offset_top = 250.3687
+offset_right = 474.60474
+offset_bottom = 295.49548
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g4v7s")
+metadata/_edit_lock_ = true
+
+[node name="Fase2" type="Button" parent="." unique_id=21702624]
+layout_mode = 0
+offset_left = 492.7273
+offset_top = 250.31555
+offset_right = 534.4574
+offset_bottom = 295.59134
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yf5fn")
+metadata/_edit_lock_ = true
+
+[node name="Fase3" type="Button" parent="." unique_id=967620123]
+layout_mode = 0
+offset_left = 552.69
+offset_top = 249.87424
+offset_right = 596.8562
+offset_bottom = 296.61066
+theme_override_styles/normal = SubResource("StyleBoxEmpty_57qmd")
+metadata/_edit_lock_ = true
+
+[node name="Fase4" type="Button" parent="." unique_id=681534557]
+layout_mode = 0
+offset_left = 614.392
+offset_top = 250.24344
+offset_right = 657.29724
+offset_bottom = 296.60797
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d0u6y")
+metadata/_edit_lock_ = true
+
+[node name="Fase5" type="Button" parent="." unique_id=716841616]
+layout_mode = 0
+offset_left = 675.4459
+offset_top = 250.56781
+offset_right = 718.6221
+offset_bottom = 296.10815
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3gngh")
+
+[node name="Fase6" type="Button" parent="." unique_id=886198711]
+layout_mode = 0
+offset_left = 432.6866
+offset_top = 328.2133
+offset_right = 474.1033
+offset_bottom = 373.58328
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fcnqv")
+metadata/_edit_lock_ = true
+
+[node name="Fase7" type="Button" parent="." unique_id=590765580]
+layout_mode = 0
+offset_left = 493.21335
+offset_top = 328.3667
+offset_right = 534.88354
+offset_bottom = 375.10666
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7numd")
+metadata/_edit_lock_ = true
+
+[node name="Fase8" type="Button" parent="." unique_id=1342107945]
+layout_mode = 0
+offset_left = 552.63007
+offset_top = 328.0599
+offset_right = 596.25354
+offset_bottom = 372.10007
+theme_override_styles/normal = SubResource("StyleBoxEmpty_p1u0y")
+metadata/_edit_lock_ = true
+
+[node name="Fase9" type="Button" parent="." unique_id=2056474074]
+layout_mode = 0
+offset_left = 615.4634
+offset_top = 328.26663
+offset_right = 656.0566
+offset_bottom = 373.2732
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5s0fj")
+metadata/_edit_lock_ = true
+
+[node name="Fase10" type="Button" parent="." unique_id=267949266]
+layout_mode = 0
+offset_left = 675.6674
+offset_top = 327.5957
+offset_right = 717.13873
+offset_bottom = 374.13635
+theme_override_styles/normal = SubResource("StyleBoxEmpty_33x8s")
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="Fase1" to="." method="_on_fase_1_pressed"]
+[connection signal="pressed" from="Fase2" to="." method="_on_fase_2_pressed"]
+[connection signal="pressed" from="Fase3" to="." method="_on_fase_3_pressed"]
+[connection signal="pressed" from="Fase4" to="." method="_on_fase_4_pressed"]
+[connection signal="pressed" from="Fase5" to="." method="_on_fase_5_pressed"]
+[connection signal="pressed" from="Fase6" to="." method="_on_fase_6_pressed"]
+[connection signal="pressed" from="Fase7" to="." method="_on_fase_7_pressed"]
+[connection signal="pressed" from="Fase8" to="." method="_on_fase_8_pressed"]
+[connection signal="pressed" from="Fase9" to="." method="_on_fase_9_pressed"]
+[connection signal="pressed" from="Fase10" to="." method="_on_fase_10_pressed"]
