@@ -1,0 +1,7 @@
+res://Cenas/Fases/Fase_00.tscn
+res://Cenas/Fases/Fase_04.tscn
+res://Scripts/area_montagem.gd
+res://Scripts/byte_(personagem).gd
+res://Scripts/fase_00.gd
+res://Cenas/Areas/interface_blocos.tscn
+res://Scripts/script_cronometro.gd

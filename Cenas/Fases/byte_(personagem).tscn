@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://crdx6sojghgm6"]
+
+[ext_resource type="Script" uid="uid://8a4wfdd5g7xf" path="res://Scripts/byte_(personagem).gd" id="1_pc22w"]
+[ext_resource type="Texture2D" uid="uid://3umkl53db4xl" path="res://Imagens/sokoban_tilesheet.png" id="2_ktksy"]
+
+[node name="Byte (Personagem)" type="Node2D" unique_id=1885214350]
+scale = Vector2(1.4375, 1.3679246)
+script = ExtResource("1_pc22w")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=422416777]
+position = Vector2(4.173913, 0)
+target_position = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=430635407]
+texture = ExtResource("2_ktksy")
+region_enabled = true
+region_rect = Rect2(8, 264, 48, 48)

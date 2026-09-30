@@ -15,14 +15,25 @@ func _ready():
 	posicao_inicial = position
 	sprite.region_enabled = true
 	atualizar_sprite()
+	
+	# Conecta o botão de reiniciar automaticamente ao iniciar a fase de forma segura
+	var btn_reiniciar = _obter_ui("Reiniciar")
+	if btn_reiniciar and not btn_reiniciar.pressed.is_connected(_on_botao_reiniciar_pressed):
+		btn_reiniciar.pressed.connect(_on_botao_reiniciar_pressed)
+
+# Função auxiliar universal que encontra os nós em qualquer nível da árvore (inclusive dentro do CanvasLayer reposicionado)
+func _obter_ui(nome: String):
+	return get_tree().current_scene.find_child(nome, true, false)
 
 func avancar():
 	raycast.target_position = direcao * (tamanho_passo * 0.8)
 	raycast.force_raycast_update()
 	
 	if raycast.is_colliding():
-		get_parent().get_node("CanvasLayer/AvisoLabel").visible = true
-		get_parent().get_node("CanvasLayer/AvisoLabel/Reiniciar").visible = true
+		var aviso = _obter_ui("AvisoLabel")
+		var botao = _obter_ui("Reiniciar")
+		if aviso: aviso.visible = true
+		if botao: botao.visible = true
 		return false
 	else:
 		position += direcao * tamanho_passo
@@ -64,18 +75,15 @@ func _input(event):
 		virar_esquerda()
 # --------------------------------------------------------------------
 
-
 func _on_area_montagem_passos_prontos(lista_blocos):
 	var blocos_para_log = []
 	for item in lista_blocos:
 		if item is Node and "nome_comando" in item:
 			blocos_para_log.append(item.nome_comando)
 	
-	# Envio da lista de blocos para log
 	GerenciadorLog.definir_lista_blocos_tentativa(blocos_para_log)
 
 	for item in lista_blocos:
-		print("Comando recebido do bloco: ", item.nome_comando)
 		var comando = ""
 		var retangulo = null
 		
@@ -101,8 +109,10 @@ func _on_area_montagem_passos_prontos(lista_blocos):
 				
 				GerenciadorLog.finalizar_tentativa(false)
 				
-				get_parent().get_node("CanvasLayer/AvisoLabel").visible = true
-				get_parent().get_node("CanvasLayer/AvisoLabel/Reiniciar").visible = true  
+				var aviso = _obter_ui("AvisoLabel")
+				var botao = _obter_ui("Reiniciar")
+				if aviso: aviso.visible = true
+				if botao: botao.visible = true
 				break
 				
 		elif comando == "VIRAR À ESQUERDA" or comando == "VIRAR_ESQUERDA":
@@ -115,23 +125,30 @@ func _on_area_montagem_passos_prontos(lista_blocos):
 
 	if position.distance_to(Vector2(546, 231)) > 10:
 		if bloco_com_erro == null:
-			# Caso termine os blocos mas pare fora do destino (sem colisão prévia)
 			GerenciadorLog.finalizar_tentativa(false)
-			
-			get_parent().get_node("CanvasLayer/AvisoLabel").visible = true
-			get_parent().get_node("CanvasLayer/AvisoLabel/Reiniciar").visible = true
+			var aviso = _obter_ui("AvisoLabel")
+			var botao = _obter_ui("Reiniciar")
+			if aviso: aviso.visible = true
+			if botao: botao.visible = true
 	else:
-		# Sucesso absoluto no ponto verde
+		var sucesso = _obter_ui("SucessoLabel")
 		GerenciadorLog.finalizar_tentativa(true)
-		get_parent().get_node("CanvasLayer/SucessoLabel").visible = true
+		if sucesso: sucesso.visible = true
 		GlobalJogo.proxima_fase()
 
 func _on_botao_reiniciar_pressed():
-	get_parent().get_node("CanvasLayer/AvisoLabel").visible = false
-	get_parent().get_node("CanvasLayer/AvisoLabel/Reiniciar").visible = false
+	var aviso_label = _obter_ui("AvisoLabel")
+	var sucesso_label = _obter_ui("SucessoLabel")
+	var botao_reiniciar = _obter_ui("Reiniciar")
+	var contador_label = _obter_ui("ContadorLabel")
+	
+	if aviso_label: aviso_label.visible = false
+	if sucesso_label: sucesso_label.visible = false
+	if botao_reiniciar: botao_reiniciar.visible = false
 	
 	if bloco_com_erro != null:
-		bloco_com_erro.get_node("ColorRect").color = cor_padrao_erro
+		if bloco_com_erro.has_node("ColorRect"):
+			bloco_com_erro.get_node("ColorRect").color = cor_padrao_erro
 		bloco_com_erro = null 
 	
 	position = posicao_inicial
@@ -139,7 +156,7 @@ func _on_botao_reiniciar_pressed():
 	atualizar_sprite()
 	
 	tentativas += 1
-	get_parent().get_node("InterfaceBlocos/ContadorLabel").text = "Tentativas: " + str(tentativas)
+	if contador_label:
+		contador_label.text = "Tentativas: " + str(tentativas)
 	
-	# DISPARA O CRONÔMETRO AQUI: O aluno vai começar a pensar/montar a próxima tentativa!
 	GerenciadorLog.reiniciar_e_continuar_cronometro()

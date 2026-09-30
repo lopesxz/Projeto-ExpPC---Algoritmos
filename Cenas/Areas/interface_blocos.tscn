@@ -9,6 +9,12 @@
 [ext_resource type="Script" uid="uid://hrmrhhytevgf" path="res://Scripts/area_estoque.gd" id="7_sju4l"]
 [ext_resource type="PackedScene" uid="uid://bicix0u82f5dk" path="res://Cenas/Areas/bloco_comando.tscn" id="8_oxx4j"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7losc"]
+bg_color = Color(0.03529412, 1, 0.3254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_geqtr"]
+bg_color = Color(0.10980392, 0.38431373, 0.88235295, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_migug"]
 bg_color = Color(0.10980392, 0.49411765, 0.7882353, 1)
 
@@ -54,6 +60,43 @@ color = Color(0.6766099, 0.8710071, 0.86211, 1)
 script = ExtResource("2_geqtr")
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Control/AreaMontagem" unique_id=1845883323]
+layer = 10
+
+[node name="SucessoLabel" type="Label" parent="Control/AreaMontagem/CanvasLayer" unique_id=1988495166]
+visible = false
+offset_left = 65.0
+offset_top = 65.0
+offset_right = 575.0
+offset_bottom = 580.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_7losc")
+text = "PRÓXIMA FASE!!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AvisoLabel" type="Label" parent="Control/AreaMontagem/CanvasLayer" unique_id=704481446]
+visible = false
+z_index = 10
+offset_left = 358.0
+offset_top = 230.0
+offset_right = 876.0
+offset_bottom = 402.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_geqtr")
+text = "
+
+O BITO NÃO CONSEGUIU CHEGAR AO SEU DESTINO :("
+horizontal_alignment = 1
+
+[node name="Reiniciar" type="Button" parent="Control/AreaMontagem/CanvasLayer/AvisoLabel" unique_id=992388206]
+visible = false
+layout_mode = 0
+offset_left = 74.0
+offset_top = 90.0
+offset_right = 431.0
+offset_bottom = 134.0
+text = "REINICIAR"
 
 [node name="TextureRect" type="TextureRect" parent="Control/AreaMontagem" unique_id=1161321567]
 modulate = Color(0.69803923, 1, 1, 1)
