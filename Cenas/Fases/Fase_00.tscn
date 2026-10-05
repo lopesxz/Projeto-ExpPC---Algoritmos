@@ -1551,4 +1551,7 @@ tile_set = SubResource("TileSet_g4v7s")
 [node name="Byte (Personagem)" parent="TileMapLayer" unique_id=1885214350 instance=ExtResource("2_3ujo1")]
 position = Vector2(288.99997, 413)
 
+[node name="Objetivo" type="Area2D" parent="TileMapLayer" unique_id=1214286077]
+position = Vector2(286, 225)
+
 [node name="InterfaceBlocos" parent="." unique_id=571148182 instance=ExtResource("3_anyo0")]

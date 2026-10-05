@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://iooradluo8j" path="res://Scripts/painel_fases.gd" id="1_gdx57"]
 [ext_resource type="Texture2D" uid="uid://cneat31flmiow" path="res://Imagens/TelaFundo.jpg" id="1_gt2up"]
 [ext_resource type="Texture2D" uid="uid://cufspnmb3ncj2" path="res://Imagens/ImagemFases.png" id="3_xgbe7"]
+[ext_resource type="Texture2D" uid="uid://b42xeyd5jxdjk" path="res://Imagens/ImagemVoltar2.png" id="4_xgbe7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g4v7s"]
 
@@ -142,6 +143,23 @@ offset_bottom = 374.13635
 theme_override_styles/normal = SubResource("StyleBoxEmpty_33x8s")
 metadata/_edit_lock_ = true
 
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1356016695]
+layout_mode = 0
+offset_left = 520.3652
+offset_top = 7.0999756
+offset_right = 632.3652
+offset_bottom = 60.099976
+texture = ExtResource("4_xgbe7")
+expand_mode = 1
+
+[node name="Voltar" type="Button" parent="." unique_id=1913787950]
+layout_mode = 0
+offset_left = 530.3652
+offset_top = 12.099976
+offset_right = 623.3652
+offset_bottom = 52.099976
+theme_type_variation = &"FlatButton"
+
 [connection signal="pressed" from="Fase1" to="." method="_on_fase_1_pressed"]
 [connection signal="pressed" from="Fase2" to="." method="_on_fase_2_pressed"]
 [connection signal="pressed" from="Fase3" to="." method="_on_fase_3_pressed"]
@@ -152,3 +170,4 @@ metadata/_edit_lock_ = true
 [connection signal="pressed" from="Fase8" to="." method="_on_fase_8_pressed"]
 [connection signal="pressed" from="Fase9" to="." method="_on_fase_9_pressed"]
 [connection signal="pressed" from="Fase10" to="." method="_on_fase_10_pressed"]
+[connection signal="pressed" from="Voltar" to="." method="_on_voltar_pressed"]

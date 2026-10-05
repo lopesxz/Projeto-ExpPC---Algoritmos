@@ -72,7 +72,8 @@ offset_right = 575.0
 offset_bottom = 580.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_7losc")
-text = "PRÓXIMA FASE!!!"
+text = "PRÓXIMA FASE
+(Ainda não implementada)"
 horizontal_alignment = 1
 vertical_alignment = 1
 

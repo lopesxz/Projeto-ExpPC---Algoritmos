@@ -1,2 +1,6 @@
+Button
+TextureRect
+Area2D
+Marker2D
 TileMapLayer
 TileMap

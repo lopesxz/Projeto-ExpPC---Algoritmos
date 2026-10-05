@@ -76,6 +76,12 @@ func _input(event):
 # --------------------------------------------------------------------
 
 func _on_area_montagem_passos_prontos(lista_blocos):
+	var cena_atual = get_tree().current_scene
+	if cena_atual and "scene_file_path" in cena_atual:
+		var nome_fase = cena_atual.scene_file_path.get_file().get_basename()
+		GerenciadorLog.fase_atual = nome_fase
+	# Se o log atualizar o dicionário por função, podes chamar aqui também:
+	# GerenciadorLog.atualizar_fase_tentativa(nome_fase)
 	var blocos_para_log = []
 	for item in lista_blocos:
 		if item is Node and "nome_comando" in item:
@@ -123,14 +129,18 @@ func _on_area_montagem_passos_prontos(lista_blocos):
 		await get_tree().create_timer(0.5).timeout
 		retangulo.color = cor_original
 
-	if position.distance_to(Vector2(546, 231)) > 10:
+	var objetivo = get_tree().current_scene.find_child("Objetivo", true, false)
+
+	if objetivo and position.distance_to(objetivo.global_position) > 10:
 		if bloco_com_erro == null:
+			# Caso termine os blocos mas pare fora do destino
 			GerenciadorLog.finalizar_tentativa(false)
 			var aviso = _obter_ui("AvisoLabel")
 			var botao = _obter_ui("Reiniciar")
 			if aviso: aviso.visible = true
 			if botao: botao.visible = true
 	else:
+		# Sucesso absoluto no objetivo da fase atual!
 		var sucesso = _obter_ui("SucessoLabel")
 		GerenciadorLog.finalizar_tentativa(true)
 		if sucesso: sucesso.visible = true

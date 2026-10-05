@@ -1,9 +1,8 @@
 extends Node
 
 const CAMINHO_LOG = "user://dados_jogada.json"
+var fase_atual = ""
 
-# Puxa dinamicamente a fase atual do GlobalJogo (ajusta para GlobalJogo ou global_jogo conforme nomeaste no Autoload)
-var fase_atual: String = GlobalJogo.nome_fase_atual if Engine.has_singleton("GlobalJogo") else "Fase_04"
 
 var dados_sessao = {
 	"nome_crianca": "Aluno", 
@@ -30,16 +29,17 @@ func _ready() -> void:
 	randomize()
 	dados_sessao.id_jogada = randi() % 90000 + 10000
 	
-	# Garante que a fase reflete o estado global atual ao iniciar a cena
-	atualizar_fase_atual()
+	# Descobre o nome da fase atual a partir do ficheiro da cena
+	fase_atual = scene_file_path.get_file().get_basename()
+	tentativa_atual["fase"] = fase_atual
 	
 	# Começa a contar o tempo da primeira tentativa assim que o jogo/fase abre!
 	iniciar_cronometro()
 
 func atualizar_fase_atual() -> void:
-	# Atualiza com o valor mais recente do singleton (atenta se o teu autoload começa com maiúscula ou minúscula)
-	fase_atual = GlobalJogo.nome_fase_atual
-	tentativa_atual.fase = fase_atual
+	var nome_fase = scene_file_path.get_file().get_basename()
+	fase_atual = nome_fase
+	tentativa_atual["fase"] = nome_fase
 
 func iniciar_cronometro() -> void:
 	tempo_inicio_tentativa = Time.get_ticks_msec()

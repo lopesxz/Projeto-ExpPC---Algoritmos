@@ -29,3 +29,7 @@ func _on_fase_9_pressed() -> void:
 	
 func _on_fase_10_pressed() -> void:
 	get_tree().change_scene_to_file("res://Cenas/Fases/Fase_09.tscn")
+
+
+func _on_voltar_pressed() -> void:
+	get_tree().change_scene_to_file("res://Cenas/Menu/menu_principal.tscn")
