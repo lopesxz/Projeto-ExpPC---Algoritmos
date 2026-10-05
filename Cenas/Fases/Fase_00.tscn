@@ -1555,3 +1555,35 @@ position = Vector2(288.99997, 413)
 position = Vector2(286, 225)
 
 [node name="InterfaceBlocos" parent="." unique_id=571148182 instance=ExtResource("3_anyo0")]
+
+[node name="SetaBaixo" parent="InterfaceBlocos/Control/AreaMontagem" parent_id_path=PackedInt32Array(571148182, 407638112) index="4" unique_id=1823540583]
+offset_left = -568.0
+offset_top = 633.0
+offset_right = -517.0
+offset_bottom = 678.0
+
+[node name="SetaCima" parent="InterfaceBlocos/Control/AreaMontagem" parent_id_path=PackedInt32Array(571148182, 407638112) index="5" unique_id=1871838562]
+offset_left = -618.0
+offset_top = 578.0
+offset_right = -568.0
+offset_bottom = 623.0
+
+[node name="Avancar" parent="InterfaceBlocos/Control/AreaEstoque" parent_id_path=PackedInt32Array(571148182, 1309929412) index="0" unique_id=1887600487]
+offset_left = 134.0
+offset_top = 76.0
+offset_right = -138.0
+offset_bottom = -127.0
+
+[node name="Virar Esquerda" parent="InterfaceBlocos/Control/AreaEstoque" parent_id_path=PackedInt32Array(571148182, 1309929412) index="1" unique_id=602368564]
+offset_left = -623.0
+offset_top = 191.0
+offset_right = -953.0
+offset_bottom = -17.0
+
+[node name="Virar Direita" parent="InterfaceBlocos/Control/AreaEstoque" parent_id_path=PackedInt32Array(571148182, 1309929412) index="2" unique_id=131426477]
+offset_left = -634.0
+offset_top = 194.0
+offset_right = -964.0
+offset_bottom = -14.0
+
+[editable path="InterfaceBlocos"]

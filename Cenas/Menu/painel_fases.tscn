@@ -151,6 +151,7 @@ offset_right = 632.3652
 offset_bottom = 60.099976
 texture = ExtResource("4_xgbe7")
 expand_mode = 1
+metadata/_edit_lock_ = true
 
 [node name="Voltar" type="Button" parent="." unique_id=1913787950]
 layout_mode = 0
@@ -159,6 +160,7 @@ offset_top = 12.099976
 offset_right = 623.3652
 offset_bottom = 52.099976
 theme_type_variation = &"FlatButton"
+metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="Fase1" to="." method="_on_fase_1_pressed"]
 [connection signal="pressed" from="Fase2" to="." method="_on_fase_2_pressed"]

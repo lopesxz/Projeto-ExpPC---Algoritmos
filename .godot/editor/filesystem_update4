@@ -1,4 +1,2 @@
-res://Cenas/Menu/painel_fases.tscn
-res://Scripts/painel_fases.gd
-res://Cenas/Fases/Fase_03.tscn
-res://Cenas/Fases/Fase_02.tscn
+res://Cenas/Fases/Fase_00.tscn
+res://Cenas/Fases/Fase_01.tscn
