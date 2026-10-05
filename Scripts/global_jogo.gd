@@ -3,8 +3,8 @@ extends Node
 var bloco_selecionado = null
 
 # Guarda o número da fase atual
-var numero_fase_atual: int = 4
-var nome_fase_atual: String = "Fase_04"
+var numero_fase_atual: int = 0
+var nome_fase_atual: String = "Fase_00"
 
 # Função para avançar automaticamente para a fase seguinte
 func proxima_fase() -> void:

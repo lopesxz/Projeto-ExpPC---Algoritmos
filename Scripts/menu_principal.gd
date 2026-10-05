@@ -2,7 +2,7 @@ extends Control
 
 func _on_botao_jogar_pressed() -> void:
 	# Vai direto para a Fase 0 (Modo Carreira / Tutorial)
-	get_tree().change_scene_to_file("res://Cenas/Fases/Fase_04.tscn")
+	get_tree().change_scene_to_file("res://Cenas/Fases/Fase_00.tscn")
 
 func _on_botao_fases_pressed() -> void:
 	# Abre a tela de seleção de fases

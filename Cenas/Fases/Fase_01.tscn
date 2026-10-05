@@ -1514,6 +1514,10 @@ position = Vector2(222, 156)
 
 [node name="InterfaceBlocos" parent="." unique_id=571148182 instance=ExtResource("3_e5lar")]
 
+[node name="Control" parent="InterfaceBlocos" index="1" unique_id=1590961223]
+offset_left = 642.0
+offset_right = 1152.0
+
 [node name="SetaBaixo" parent="InterfaceBlocos/Control/AreaMontagem" parent_id_path=PackedInt32Array(571148182, 407638112) index="4" unique_id=1823540583]
 offset_left = 478.0
 offset_top = -44.0
