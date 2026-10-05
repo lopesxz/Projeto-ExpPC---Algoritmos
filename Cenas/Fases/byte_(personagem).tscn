@@ -9,7 +9,9 @@ script = ExtResource("1_pc22w")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=422416777]
 position = Vector2(4.173913, 0)
+exclude_parent = false
 target_position = Vector2(0, 0)
+collision_mask = 65535
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=430635407]
 texture = ExtResource("2_ktksy")
