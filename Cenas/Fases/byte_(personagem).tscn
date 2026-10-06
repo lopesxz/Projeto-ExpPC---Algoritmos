@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://8a4wfdd5g7xf" path="res://Scripts/byte_(personagem).gd" id="1_pc22w"]
 [ext_resource type="Texture2D" uid="uid://3umkl53db4xl" path="res://Imagens/sokoban_tilesheet.png" id="2_ktksy"]
+[ext_resource type="AudioStream" uid="uid://d3c27j7yegcys" path="res://SFX/tuc.wav" id="3_ktksy"]
 
 [node name="Byte (Personagem)" type="Node2D" unique_id=1885214350]
 scale = Vector2(1.4375, 1.3679246)
 script = ExtResource("1_pc22w")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=422416777]
-position = Vector2(4.173913, 0)
 exclude_parent = false
 target_position = Vector2(0, 0)
 collision_mask = 65535
@@ -17,3 +17,6 @@ collision_mask = 65535
 texture = ExtResource("2_ktksy")
 region_enabled = true
 region_rect = Rect2(8, 264, 48, 48)
+
+[node name="TucSound" type="AudioStreamPlayer2D" parent="." unique_id=317591524]
+stream = ExtResource("3_ktksy")

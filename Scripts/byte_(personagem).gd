@@ -10,6 +10,7 @@ var tempo_segundos = 0
 
 @onready var sprite = $Sprite2D
 @onready var raycast = $RayCast2D
+@onready var tuc_sound = $TucSound
 
 func _ready():
 	posicao_inicial = position
@@ -30,6 +31,8 @@ func avancar():
 	raycast.force_raycast_update()
 	
 	if raycast.is_colliding():
+		await play_bump_animation(raycast.get_collision_point())
+		
 		var aviso = _obter_ui("AvisoLabel")
 		var botao = _obter_ui("Reiniciar")
 		if aviso: aviso.visible = true
@@ -62,6 +65,21 @@ func atualizar_sprite():
 		sprite.region_rect = Rect2(200, 328, 48, 48)
 	elif direcao == Vector2.DOWN:
 		sprite.region_rect = Rect2(8, 264, 48, 48)
+
+func play_bump_animation(point: Vector2):
+	var original_pos = global_position
+	
+	var amount = abs(point - global_position) - (sprite.get_rect().size / 3)
+	var direction_bump = Vector2(point - global_position).normalized()
+	var bump_target = (direction_bump * amount) + original_pos
+	
+	tuc_sound.play()
+	
+	var tween = create_tween()
+	tween.tween_property(self, "position", bump_target, 0.1).set_trans(Tween.TRANS_BOUNCE)
+	tween.tween_property(self, "position", original_pos, 0.15).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)	
+	
+	await tween.finished
 
 # --------------------------------------------------------------------
 # FUNÇÃO PRA MEXER NA SETINHA DO TECLADO --> TIRAR APÓS A FINALIZAÇÃO!!!!
@@ -108,7 +126,7 @@ func _on_area_montagem_passos_prontos(lista_blocos):
 		await get_tree().create_timer(0.3).timeout 
 		
 		if comando == "AVANÇAR":
-			var passo_ok = avancar()
+			var passo_ok = await avancar()
 			if passo_ok == false:
 				bloco_com_erro = item
 				cor_padrao_erro = cor_original
