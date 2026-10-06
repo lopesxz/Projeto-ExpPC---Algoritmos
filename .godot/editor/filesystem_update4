@@ -1,9 +1,1 @@
-res://Cenas/Fases/Fase_01.tscn
-res://Cenas/Menu/painel_fases.tscn
-res://Scripts/menu_principal.gd
-res://Scripts/global_jogo.gd
-res://Cenas/Fases/Fase_00.tscn
-res://Cenas/Fases/Fase_02.tscn
-res://Cenas/Fases/Fase_03.tscn
 res://Cenas/Areas/interface_blocos.tscn
-res://Cenas/Fases/byte_(personagem).tscn
