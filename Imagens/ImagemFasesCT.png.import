@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cufspnmb3ncj2"
-path="res://.godot/imported/ImagemFases.png-d9adb48d8c5886d200e54420a3d62ff8.ctex"
+uid="uid://cy3fu8yp1frc6"
+path="res://.godot/imported/ImagemFasesCT.png-c30b18ae288622074eb43d7909edbb57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagens/ImagemFases.png"
-dest_files=["res://.godot/imported/ImagemFases.png-d9adb48d8c5886d200e54420a3d62ff8.ctex"]
+source_file="res://Imagens/ImagemFasesCT.png"
+dest_files=["res://.godot/imported/ImagemFasesCT.png-c30b18ae288622074eb43d7909edbb57.ctex"]
 
 [params]
 
