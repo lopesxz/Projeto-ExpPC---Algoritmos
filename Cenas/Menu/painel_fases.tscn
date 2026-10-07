@@ -37,6 +37,7 @@ offset_bottom = -1.0999756
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gdx57")
+metadata/_edit_lock_ = true
 
 [node name="TelaFundo" type="Sprite2D" parent="." unique_id=720494095]
 position = Vector2(577.7599, 323.54968)
@@ -146,9 +147,9 @@ metadata/_edit_lock_ = true
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=1356016695]
 layout_mode = 0
 offset_left = 520.3652
-offset_top = 7.0999756
+offset_top = 43.099976
 offset_right = 632.3652
-offset_bottom = 60.099976
+offset_bottom = 96.099976
 texture = ExtResource("4_xgbe7")
 expand_mode = 1
 metadata/_edit_lock_ = true
@@ -156,9 +157,9 @@ metadata/_edit_lock_ = true
 [node name="Voltar" type="Button" parent="." unique_id=1913787950]
 layout_mode = 0
 offset_left = 530.3652
-offset_top = 12.099976
+offset_top = 48.099976
 offset_right = 623.3652
-offset_bottom = 52.099976
+offset_bottom = 88.099976
 theme_type_variation = &"FlatButton"
 metadata/_edit_lock_ = true
 

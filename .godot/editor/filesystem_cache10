@@ -1,11 +1,11 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1791326917
+::res://::1791398292
 export_presets.cfg::TextFile::-1::1790626536::0::1::::<><><>0<>0<><>::
 README.md::TextFile::-1::1790626455::0::1::::<><><>0<>0<><>::
 ::res://Cenas/::1790637407
-::res://Cenas/Areas/::1791237165
+::res://Cenas/Areas/::1791327409
 bloco_comando.tscn::PackedScene::2952588343022947296::1790605476::0::1::::<><><>0<>0<><>::uid://d2g6u015je6pr::::res://Scripts/clique_mouse.gd
-interface_blocos.tscn::PackedScene::3023070562768202507::1791237165::0::1::::<><><>0<>0<><>::uid://c00ro0yueuvdi::::res://Scripts/script_cronometro.gd<>uid://02aw8fc8gris::::res://Scripts/area_montagem.gd<>uid://via4ht7u6i1m::::res://Imagens/light_grey_dots_background.jpg<>uid://mg20d6qxfnk6::::res://Imagens/lixeira.png<>uid://do2so7ndqj0pl::::res://Imagens/pra-cima.png<>uid://b43ep786sihe5::::res://Imagens/botao-play.png<>uid://hrmrhhytevgf::::res://Scripts/area_estoque.gd<>uid://bicix0u82f5dk::::res://Cenas/Areas/bloco_comando.tscn
+interface_blocos.tscn::PackedScene::3023070562768202507::1791327409::0::1::::<><><>0<>0<><>::uid://c00ro0yueuvdi::::res://Scripts/script_cronometro.gd<>uid://02aw8fc8gris::::res://Scripts/area_montagem.gd<>uid://via4ht7u6i1m::::res://Imagens/light_grey_dots_background.jpg<>uid://mg20d6qxfnk6::::res://Imagens/lixeira.png<>uid://do2so7ndqj0pl::::res://Imagens/pra-cima.png<>uid://b43ep786sihe5::::res://Imagens/botao-play.png<>uid://hrmrhhytevgf::::res://Scripts/area_estoque.gd<>uid://bicix0u82f5dk::::res://Cenas/Areas/bloco_comando.tscn
 ::res://Cenas/Fases/::1791326850
 byte_(personagem).tscn::PackedScene::5973697660404396167::1791326850::0::1::::<><><>0<>0<><>::uid://8a4wfdd5g7xf::::res://Scripts/byte_(personagem).gd<>uid://3umkl53db4xl::::res://Imagens/sokoban_tilesheet.png<>uid://d3c27j7yegcys::::res://SFX/tuc.wav
 Fase_00.tscn::PackedScene::1950361639019335713::1791239617::0::1::::<><><>0<>0<><>::uid://3umkl53db4xl::::res://Imagens/sokoban_tilesheet.png<>uid://crdx6sojghgm6::::res://Cenas/Fases/byte_(personagem).tscn<>uid://bjcnsbiqoy4o2::::res://Cenas/Areas/interface_blocos.tscn
@@ -43,5 +43,5 @@ menu_principal.gd::GDScript::5594124495360884491::1791236369::0::1::::<>Control<
 painel_fases.gd::GDScript::17390954094639059::1791215982::0::1::::<>Control<><>0<>0<><>::
 script_cronometro.gd::GDScript::6580230443254128418::1790731074::0::1::::<>CanvasLayer<><>0<>0<><>::
 tela_nome.gd::GDScript::1851892835073815818::1790608677::0::1::::<>Node2D<><>0<>0<><>::
-::res://SFX/::1791326858
+::res://SFX/::1791326918
 tuc.wav::AudioStreamWAV::9130375455901907770::1791326850::1791326918::1::::<><><>0<>0<>7e32cab94a670dee79b3b81a513a6d22<>res://.godot/imported/tuc.wav-4faf2b73345fdd79d08438ea71fce309.sample::

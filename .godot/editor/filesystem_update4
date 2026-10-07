@@ -1,1 +1,3 @@
-res://Cenas/Areas/interface_blocos.tscn
+res://Cenas/Fases/Fase_01.tscn
+res://Cenas/Menu/painel_fases.tscn
+res://Cenas/Fases/Fase_03.tscn
