@@ -6,7 +6,7 @@ var fase_atual = ""
 
 var dados_sessao = {
 	"nome_crianca": "Aluno", 
-	"mac_address": "simulado_pc_01", 
+	"id_maquina": "", 
 	"id_jogada": 1, 
 	"tempo_total_segundos": 0.0,
 	"quantidade_tentativas": 0,
@@ -98,6 +98,8 @@ func finalizar_tentativa(sucesso: bool) -> void:
 	tempo_decorrido_acumulado = 0.0
 
 func salvar_em_disco() -> void:
+	dados_sessao["id_maquina"] = OS.get_unique_id()
+	
 	var arquivo = FileAccess.open(CAMINHO_LOG, FileAccess.WRITE)
 	if arquivo:
 		var json_texto = JSON.stringify(dados_sessao, "\t")
