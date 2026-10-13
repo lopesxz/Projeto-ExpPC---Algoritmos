@@ -1,39 +1,9 @@
 extends ColorRect
 
 func _can_drop_data(at_position, data):
-	# 1. Garante que o data existe e é um nó válido
-	if not data is Node:
-		return false
-	
-	# 2. Garante estritamente que ele veio de dentro da AreaEstoque
-	if data.get_parent().name != "AreaEstoque":
-		return false
-		
-	# 3. Garante que possui a propriedade de comando do bloco
-	if not "nome_comando" in data:
-		return false
-		
-	return true
-
-func _drop_data(at_position, data):
-	var lista = get_tree().current_scene.find_child("ListaBlocos", true, false)
-	var aviso_limite = get_tree().current_scene.find_child("LimiteLabel", true, false)
-	
-	if not lista:
-		return
-	
-	# Trava de segurança de 14 blocos
-	if lista.get_child_count() >= 14:
-		if aviso_limite:
-			aviso_limite.visible = true
-		return
-
-	# Se passou pela triagem, duplica e adiciona com segurança
-	if data and data is Node and data.get_parent().name == "AreaEstoque":
-		var bloco_final = data.duplicate()
-		lista.add_child(bloco_final)
-		if aviso_limite:
-			aviso_limite.visible = false
+	# print("can_drop_data -- area estoque")
+	# Nao eh pra aceitar soltar blocos dentro da area de estoque!!!!
+	return false
 
 func _gui_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:

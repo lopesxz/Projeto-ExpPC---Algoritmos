@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://dfj6juyb3cwco" path="res://Scripts/tutorial_1.gd" id="6_e8ai8"]
 [ext_resource type="Texture2D" uid="uid://ci4g7kknkefas" path="res://Imagens/aberta.png" id="7_2s4eu"]
 [ext_resource type="Texture2D" uid="uid://cfp1w115ehcw2" path="res://Imagens/fechada.png" id="8_ah2c3"]
+[ext_resource type="Texture2D" uid="uid://d22trypxr30op" path="res://Imagens/aponta.png" id="8_aqgf2"]
 
 [sub_resource type="GDScript" id="GDScript_anyo0"]
 script/source = "extends Node2D
@@ -1616,6 +1617,52 @@ tracks/2/keys = {
 "update": 1,
 "values": [ExtResource("7_2s4eu")]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Tutorial/Aponta:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(776, 101.00003)]
+}
+
+[sub_resource type="Animation" id="Animation_ah2c3"]
+resource_name = "aponta-1"
+length = 0.8
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tutorial/Aponta:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(776, 101.00003), Vector2(776, 127.00001), Vector2(776, 101.00003)]
+}
+
+[sub_resource type="Animation" id="Animation_aqgf2"]
+resource_name = "aponta-1"
+length = 0.8
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tutorial/Aponta:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(920.00006, 101.00003), Vector2(920, 127), Vector2(920, 101)]
+}
 
 [sub_resource type="Animation" id="Animation_2s4eu"]
 resource_name = "setinha-1"
@@ -1661,6 +1708,8 @@ tracks/2/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ah2c3"]
 _data = {
 &"RESET": SubResource("Animation_e8ai8"),
+&"aponta-1": SubResource("Animation_ah2c3"),
+&"aponta-2": SubResource("Animation_aqgf2"),
 &"mao-1": SubResource("Animation_2s4eu")
 }
 
@@ -1681,6 +1730,9 @@ next_scene = ExtResource("3_fieks")
 position = Vector2(291.99997, 415)
 
 [node name="InterfaceBlocos" parent="." unique_id=571148182 instance=ExtResource("3_anyo0")]
+
+[node name="ApagarTodos" parent="InterfaceBlocos/Control/AreaMontagem" parent_id_path=PackedInt32Array(571148182, 407638112) index="3" unique_id=437821649]
+visible = false
 
 [node name="SetaBaixo" parent="InterfaceBlocos/Control/AreaMontagem" parent_id_path=PackedInt32Array(571148182, 407638112) index="4" unique_id=1823540583]
 offset_left = -568.0
@@ -1720,20 +1772,77 @@ position = Vector2(892, 409.00003)
 scale = Vector2(0.33203125, 0.33203125)
 texture = ExtResource("7_2s4eu")
 
-[node name="Selecione" type="Label" parent="Tutorial" unique_id=543085040]
-offset_left = 709.0
-offset_top = 322.0
-offset_right = 1099.0
-offset_bottom = 350.0
+[node name="Aponta" type="Sprite2D" parent="Tutorial" unique_id=213703369]
+visible = false
+position = Vector2(776, 101.00003)
+scale = Vector2(0.33203125, 0.33203125)
+texture = ExtResource("8_aqgf2")
+
+[node name="Comandos" type="Label" parent="Tutorial" unique_id=199142771]
+visible = false
+offset_left = 644.0
+offset_top = 329.0
+offset_right = 1154.0
+offset_bottom = 388.0
+size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
-text = "Agora selecione um bloco para apagá-lo!"
+text = "Arraste comandos para
+ mover o Mauro!"
+horizontal_alignment = 1
+
+[node name="Selecione" type="Label" parent="Tutorial" unique_id=543085040]
+visible = false
+offset_left = 644.0
+offset_top = 326.0
+offset_right = 1153.0
+offset_bottom = 385.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Opa! Parece que adicionamos um
+bloco a mais! Clique em um dos blocos."
+horizontal_alignment = 1
+
+[node name="Apaga" type="Label" parent="Tutorial" unique_id=1886106098]
+visible = false
+offset_left = 644.0
+offset_top = 358.0
+offset_right = 1154.0
+offset_bottom = 391.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Agora, clique na lixeira para apagá-lo."
+horizontal_alignment = 1
+
+[node name="Executa" type="Label" parent="Tutorial" unique_id=1206553080]
+offset_left = 645.0
+offset_top = 295.0
+offset_right = 1153.0
+offset_bottom = 385.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Perfeito! Agora clique nesse
+botão para executar o seu
+algoritmo!"
 horizontal_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Tutorial" unique_id=106267135]
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_ah2c3")
 
+[node name="DisableTopUI" type="Label" parent="Tutorial" unique_id=1273162861]
+visible = false
+offset_left = 648.0
+offset_right = 1156.0
+offset_bottom = 62.0
+mouse_filter = 0
+
 [connection signal="comando_adicionado" from="InterfaceBlocos/Control/AreaMontagem" to="Tutorial" method="_on_area_montagem_comando_adicionado"]
+[connection signal="pressed" from="InterfaceBlocos/Control/AreaMontagem/Apagar1" to="Tutorial" method="_on_apagar_1_pressed"]
+[connection signal="pressed" from="InterfaceBlocos/Control/AreaMontagem/Executar" to="Tutorial" method="_on_executar_pressed"]
+[connection signal="comando_selecionado" from="InterfaceBlocos/Control/AreaEstoque/Avancar" to="Tutorial" method="_on_avancar_comando_selecionado"]
 
 [editable path="InterfaceBlocos"]

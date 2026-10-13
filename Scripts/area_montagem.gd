@@ -4,6 +4,7 @@ signal comando_adicionado()
 
 # 1. Garante que só aceita blocos válidos do estoque (mata o clique fantasma)
 func _can_drop_data(at_position, data):
+	# print("can_drop_data -- area montagem")
 	if data and "nome_comando" in data:
 		return true
 	return false
