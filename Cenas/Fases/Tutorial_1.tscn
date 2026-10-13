@@ -1720,15 +1720,14 @@ position = Vector2(892, 409.00003)
 scale = Vector2(0.33203125, 0.33203125)
 texture = ExtResource("7_2s4eu")
 
-[node name="Label" type="Label" parent="Tutorial" unique_id=543085040]
-visible = false
-offset_left = 715.0
-offset_top = 273.0
-offset_right = 1067.0
-offset_bottom = 309.0
+[node name="Selecione" type="Label" parent="Tutorial" unique_id=543085040]
+offset_left = 709.0
+offset_top = 322.0
+offset_right = 1099.0
+offset_bottom = 350.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 26
-text = "Segure e arraste este botao!"
+theme_override_font_sizes/font_size = 20
+text = "Agora selecione um bloco para apagá-lo!"
 horizontal_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Tutorial" unique_id=106267135]

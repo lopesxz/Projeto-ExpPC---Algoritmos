@@ -4,6 +4,7 @@ extends Control
 @export var nome_comando = "AVANÇAR"
 var selecionado = false
 var cor_original_bloco = Color.WHITE
+signal comando_selecionado
 
 func _ready():
 	$ColorRect/Label.text = texto_do_bloco
@@ -56,7 +57,7 @@ func _gui_input(event):
 				
 				selecionado = true
 				$ColorRect.self_modulate = Color.from_rgba8(159, 143, 117, 255) # Azul de destaque
-				
+				comando_selecionado.emit()
 				GlobalJogo.bloco_selecionado = self
 				print("Bloco selecionado: ", texto_do_bloco)
 
