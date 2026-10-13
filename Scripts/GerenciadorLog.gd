@@ -30,7 +30,7 @@ func _ready() -> void:
 	dados_sessao.id_jogada = randi() % 90000 + 10000
 	
 	# Descobre o nome da fase atual a partir do ficheiro da cena
-	fase_atual = scene_file_path.get_file().get_basename()
+	fase_atual = get_tree().current_scene.scene_file_path.get_file()
 	tentativa_atual["fase"] = fase_atual
 	
 	# Começa a contar o tempo da primeira tentativa assim que o jogo/fase abre!
