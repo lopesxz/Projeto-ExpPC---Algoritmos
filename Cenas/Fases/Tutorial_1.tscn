@@ -1780,6 +1780,7 @@ scale = Vector2(0.33203125, 0.33203125)
 texture = ExtResource("8_aqgf2")
 
 [node name="Comandos" type="Label" parent="Tutorial" unique_id=199142771]
+visible = false
 offset_left = 646.0
 offset_top = 327.0
 offset_right = 1146.0
