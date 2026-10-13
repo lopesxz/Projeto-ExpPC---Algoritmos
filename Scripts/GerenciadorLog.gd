@@ -29,15 +29,11 @@ func _ready() -> void:
 	randomize()
 	dados_sessao.id_jogada = randi() % 90000 + 10000
 	
-	# Descobre o nome da fase atual a partir do ficheiro da cena
-	fase_atual = get_tree().current_scene.scene_file_path.get_file()
-	tentativa_atual["fase"] = fase_atual
-	
 	# Começa a contar o tempo da primeira tentativa assim que o jogo/fase abre!
 	iniciar_cronometro()
 
 func atualizar_fase_atual() -> void:
-	var nome_fase = scene_file_path.get_file().get_basename()
+	var nome_fase = get_tree().current_scene.scene_file_path.get_file().get_basename()
 	fase_atual = nome_fase
 	tentativa_atual["fase"] = nome_fase
 
@@ -74,7 +70,6 @@ func definir_nome_crianca(nome: String) -> void:
 		dados_sessao.nome_crianca = "Não identificado"
 		
 func finalizar_tentativa(sucesso: bool) -> void:
-	# Atualiza a fase caso tenha mudado
 	atualizar_fase_atual()
 	
 	# Para o cronômetro no exato momento em que a execução é disparada/finalizada

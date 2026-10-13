@@ -1,9 +1,0 @@
-res://Cenas/Menu/painel_fases.tscn
-res://Scripts/global_jogo.gd
-res://Cenas/Fases/Fase_01.tscn
-res://Scripts/GerenciadorLog.gd
-res://Scripts/objetivo.gd
-res://Cenas/Fases/Fase_02.tscn
-res://Cenas/Fases/Fase_00.tscn
-res://Cenas/Fases/Fase_03.tscn
-res://Cenas/Fases/Tutorial_1.tscn
