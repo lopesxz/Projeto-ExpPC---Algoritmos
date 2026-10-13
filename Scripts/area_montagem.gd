@@ -2,14 +2,7 @@ extends ColorRect
 signal passos_prontos(lista)
 signal comando_adicionado()
 
-# 1. Garante que só aceita blocos válidos do estoque (mata o clique fantasma)
-func _can_drop_data(at_position, data):
-	# print("can_drop_data -- area montagem")
-	if data and "nome_comando" in data:
-		return true
-	return false
-
-func _drop_data(at_position, data):
+func adicionar_bloco(bloco):
 	var lista = $ListaBlocos
 	var aviso_limite = get_tree().current_scene.find_child("LimiteLabel", true, false)
 	
@@ -18,12 +11,22 @@ func _drop_data(at_position, data):
 			aviso_limite.visible = true
 		return
 
-	if data and "nome_comando" in data:
-		var bloco_final = data.duplicate()
+	if bloco and "nome_comando" in bloco:
+		var bloco_final = bloco.duplicate()
 		lista.add_child(bloco_final)
 		if aviso_limite:
 			aviso_limite.visible = false
 		comando_adicionado.emit()
+
+# 1. Garante que só aceita blocos válidos do estoque (mata o clique fantasma)
+func _can_drop_data(at_position, data):
+	# print("can_drop_data -- area montagem")
+	if data and "nome_comando" in data:
+		return true
+	return false
+
+func _drop_data(at_position, data):
+	adicionar_bloco(data)
 
 func _on_executar_pressed():
 	var lista_blocos = []
