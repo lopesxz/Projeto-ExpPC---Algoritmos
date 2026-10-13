@@ -1768,6 +1768,7 @@ offset_bottom = -14.0
 script = ExtResource("6_e8ai8")
 
 [node name="Mao" type="Sprite2D" parent="Tutorial" unique_id=1472667738]
+visible = false
 position = Vector2(892, 409.00003)
 scale = Vector2(0.33203125, 0.33203125)
 texture = ExtResource("7_2s4eu")
@@ -1779,30 +1780,30 @@ scale = Vector2(0.33203125, 0.33203125)
 texture = ExtResource("8_aqgf2")
 
 [node name="Comandos" type="Label" parent="Tutorial" unique_id=199142771]
-visible = false
-offset_left = 644.0
-offset_top = 329.0
-offset_right = 1154.0
-offset_bottom = 388.0
+offset_left = 646.0
+offset_top = 327.0
+offset_right = 1146.0
+offset_bottom = 390.0
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Arraste comandos para
- mover o Mauro!"
+mover o Mauro!"
 horizontal_alignment = 1
 
 [node name="Selecione" type="Label" parent="Tutorial" unique_id=543085040]
 visible = false
-offset_left = 644.0
-offset_top = 326.0
+offset_left = 645.0
+offset_top = 314.0
 offset_right = 1153.0
-offset_bottom = 385.0
+offset_bottom = 404.0
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Opa! Parece que adicionamos um
 bloco a mais! Clique em um dos blocos."
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Apaga" type="Label" parent="Tutorial" unique_id=1886106098]
 visible = false
@@ -1815,12 +1816,14 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Agora, clique na lixeira para apagá-lo."
 horizontal_alignment = 1
+vertical_alignment = 3
 
 [node name="Executa" type="Label" parent="Tutorial" unique_id=1206553080]
-offset_left = 645.0
-offset_top = 295.0
-offset_right = 1153.0
-offset_bottom = 385.0
+visible = false
+offset_left = 644.0
+offset_top = 308.0
+offset_right = 1152.0
+offset_bottom = 398.0
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
@@ -1828,6 +1831,7 @@ text = "Perfeito! Agora clique nesse
 botão para executar o seu
 algoritmo!"
 horizontal_alignment = 1
+vertical_alignment = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Tutorial" unique_id=106267135]
 root_node = NodePath("../..")
