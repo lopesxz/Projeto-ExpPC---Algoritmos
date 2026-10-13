@@ -4,10 +4,11 @@ var bloco_selecionado = null
 
 # Guarda o número da fase atual
 var numero_fase_atual: int = 0
-var nome_fase_atual: String = "Fase_00"
+var nome_fase_atual: String = scene_file_path.get_file().get_basename()
 
 # Função para avançar automaticamente para a fase seguinte
 func proxima_fase() -> void:
+	print(nome_fase_atual)
 	numero_fase_atual += 1
 	nome_fase_atual = "Fase_%02d" % numero_fase_atual
 	var caminho = "res://Cenas/Fases/%s.tscn" % nome_fase_atual
