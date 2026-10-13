@@ -67,17 +67,17 @@ func atualizar_sprite():
 		sprite.region_rect = Rect2(8, 264, 48, 48)
 
 func play_bump_animation(point: Vector2):
-	var original_pos = global_position
+	var original_pos = self.global_position
 	
-	var amount = abs(point - global_position) - (sprite.get_rect().size / 3)
-	var direction_bump = Vector2(point - global_position).normalized()
+	var amount = abs(point - original_pos) - (sprite.get_rect().size / 3)
+	var direction_bump = Vector2(point - original_pos).normalized()
 	var bump_target = (direction_bump * amount) + original_pos
 	
 	tuc_sound.play()
 	
 	var tween = create_tween()
 	tween.tween_property(self, "position", bump_target, 0.1).set_trans(Tween.TRANS_BOUNCE)
-	tween.tween_property(self, "position", original_pos, 0.15).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)	
+	tween.tween_property(self, "position", original_pos, 0.15).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT)	
 	
 	await tween.finished
 

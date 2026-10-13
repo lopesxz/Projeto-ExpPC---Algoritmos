@@ -1,5 +1,6 @@
 extends ColorRect
 signal passos_prontos(lista)
+signal comando_adicionado()
 
 # 1. Garante que só aceita blocos válidos do estoque (mata o clique fantasma)
 func _can_drop_data(at_position, data):
@@ -21,6 +22,7 @@ func _drop_data(at_position, data):
 		lista.add_child(bloco_final)
 		if aviso_limite:
 			aviso_limite.visible = false
+		comando_adicionado.emit()
 
 func _on_executar_pressed():
 	var lista_blocos = []
