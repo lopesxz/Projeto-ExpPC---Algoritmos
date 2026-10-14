@@ -1638,8 +1638,18 @@ offset_left = 636.0
 offset_top = 415.0
 offset_right = 1145.0
 offset_bottom = 464.0
-text = "Opa, acho que está fase veio
-cheia de blocos, vamos apagar tudo!"
+text = "Opa, acho que esta fase veio cheia de 
+blocos, vamos apagar tudo antes de começar!"
+horizontal_alignment = 1
+
+[node name="MuitoBemLabel" type="Label" parent="InterfaceBlocos/Tutorial" unique_id=227024996]
+modulate = Color(0, 0, 0, 1)
+offset_left = 636.0
+offset_top = 415.0
+offset_right = 1145.0
+offset_bottom = 464.0
+text = "Muito bem! Agora adicione blocos
+para levar o Mauro até o destino!"
 horizontal_alignment = 1
 
 [node name="DisableTopUI" type="Label" parent="InterfaceBlocos/Tutorial" unique_id=849272856]
@@ -1659,6 +1669,7 @@ texture = ExtResource("7_l2smn")
 root_node = NodePath("../../..")
 libraries/ = SubResource("AnimationLibrary_88cpa")
 
+[connection signal="comando_adicionado" from="InterfaceBlocos/Control/AreaMontagem" to="InterfaceBlocos/Tutorial" method="_on_area_montagem_comando_adicionado"]
 [connection signal="pressed" from="InterfaceBlocos/Control/AreaMontagem/ApagarTodos" to="InterfaceBlocos/Tutorial" method="_on_apagar_todos_pressed"]
 
 [editable path="InterfaceBlocos"]
