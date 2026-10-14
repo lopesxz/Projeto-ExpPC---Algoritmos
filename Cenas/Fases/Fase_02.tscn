@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://crdx6sojghgm6" path="res://Cenas/Fases/byte_(personagem).tscn" id="2_ixgj2"]
 [ext_resource type="PackedScene" uid="uid://bjcnsbiqoy4o2" path="res://Cenas/Areas/interface_blocos.tscn" id="3_0niix"]
 [ext_resource type="PackedScene" uid="uid://1qncdp12koca" path="res://Cenas/Fases/Fase_03.tscn" id="3_tcu5t"]
+[ext_resource type="Script" uid="uid://5aygd2c7ejgb" path="res://Cenas/Fases/fase_2.gd" id="6_lcxbn"]
+[ext_resource type="Texture2D" uid="uid://d22trypxr30op" path="res://Imagens/aponta.png" id="7_a4hmx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_stnj5"]
 texture = ExtResource("1_mtjp4")
@@ -1565,6 +1567,86 @@ texture = ExtResource("1_mtjp4")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_stnj5")
 
+[sub_resource type="Animation" id="Animation_l2smn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InterfaceBlocos/Tutorial/Aponta:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(607.00006, 50.00001)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("InterfaceBlocos/Tutorial/Aponta:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.7679449]
+}
+
+[sub_resource type="Animation" id="Animation_li2s5"]
+resource_name = "aponta_apagartudo"
+length = 0.6666667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InterfaceBlocos/Tutorial/Aponta:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(607.00006, 50.00001), Vector2(624.00006, 50.00001), Vector2(607.00006, 50.00001)]
+}
+
+[sub_resource type="Animation" id="Animation_lcxbn"]
+resource_name = "aponta_virar"
+length = 1.4333333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InterfaceBlocos/Tutorial/Aponta:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.7679449, -0.38920844, 0.7679449]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("InterfaceBlocos/Tutorial/Aponta:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(903, 610), Vector2(903, 610)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yjt2h"]
+_data = {
+&"RESET": SubResource("Animation_l2smn"),
+&"aponta_apagartudo": SubResource("Animation_li2s5"),
+&"aponta_virar": SubResource("Animation_lcxbn")
+}
+
 [node name="Node2D" type="Node2D" unique_id=1280097742]
 position = Vector2(-1, 2)
 
@@ -1669,5 +1751,39 @@ metadata/_edit_lock_ = true
 offset_left = 640.0
 offset_bottom = 648.0
 metadata/_edit_lock_ = true
+
+[node name="Tutorial" type="CanvasLayer" parent="InterfaceBlocos" unique_id=928690413]
+script = ExtResource("6_lcxbn")
+
+[node name="AdicioneLabel" type="Label" parent="InterfaceBlocos/Tutorial" unique_id=1662643092]
+visible = false
+modulate = Color(0, 0, 0, 1)
+offset_left = 644.0
+offset_top = 349.0
+offset_right = 1153.0
+offset_bottom = 398.0
+text = "Novos blocos surgiram, quando precisar, utilize-os
+ para ajudar Mauro a virar para os lados."
+horizontal_alignment = 1
+
+[node name="DisableTopUI" type="Label" parent="InterfaceBlocos/Tutorial" unique_id=1894594224]
+visible = false
+offset_left = 648.0
+offset_right = 1156.0
+offset_bottom = 62.0
+mouse_filter = 0
+
+[node name="Aponta" type="Sprite2D" parent="InterfaceBlocos/Tutorial" unique_id=338185564]
+visible = false
+position = Vector2(607.00006, 50.00001)
+rotation = 0.7679449
+scale = Vector2(0.32601547, 0.3160156)
+texture = ExtResource("7_a4hmx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="InterfaceBlocos/Tutorial" unique_id=797870070]
+root_node = NodePath("../../..")
+libraries/ = SubResource("AnimationLibrary_yjt2h")
+
+[connection signal="comando_adicionado" from="InterfaceBlocos/Control/AreaMontagem" to="InterfaceBlocos/Tutorial" method="_on_area_montagem_comando_adicionado"]
 
 [editable path="InterfaceBlocos"]
