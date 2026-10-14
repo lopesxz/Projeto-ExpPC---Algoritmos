@@ -1,7 +1,7 @@
 extends Control
 
 func _on_tutorial_pressed() -> void:
-	get_tree().change_scene_to_file("res://Cenas/Fases/Tutorial_1.tscn")
+	get_tree().change_scene_to_file("res://Cenas/Menu/historia.tscn")
 
 func _on_fase_1_pressed() -> void:
 	get_tree().change_scene_to_file("res://Cenas/Fases/Fase_01.tscn")

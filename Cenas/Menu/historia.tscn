@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://c6bujplvcv871"]
+
+[ext_resource type="Script" uid="uid://ctgkuh50bjtlv" path="res://Scripts/historia.gd" id="1_o25u2"]
+[ext_resource type="Texture2D" uid="uid://cneat31flmiow" path="res://Imagens/TelaFundo.jpg" id="1_sh1ws"]
+[ext_resource type="Texture2D" uid="uid://2aarwnyfp6h5" path="res://Imagens/Painel Madeira Tutorial.png" id="2_o25u2"]
+[ext_resource type="Texture2D" uid="uid://fl0it55idgy5" path="res://Imagens/ImagemEstouPronto.png" id="3_j3i4s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_emq6t"]
+
+[sub_resource type="FontVariation" id="FontVariation_j3i4s"]
+
+[node name="Control" type="Control" unique_id=1083686983]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = 3.0
+offset_right = 2.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o25u2")
+metadata/_edit_lock_ = true
+
+[node name="TelaFundo" type="Sprite2D" parent="." unique_id=875878441]
+position = Vector2(578.18744, 319.49997)
+scale = Vector2(0.18233366, 0.18479502)
+texture = ExtResource("1_sh1ws")
+metadata/_edit_lock_ = true
+
+[node name="PainelMadeiraTutorial" type="Sprite2D" parent="." unique_id=98225511]
+position = Vector2(580, 249)
+scale = Vector2(0.24544984, 0.26302084)
+texture = ExtResource("2_o25u2")
+metadata/_edit_lock_ = true
+
+[node name="ImagemEstouPronto" type="Sprite2D" parent="PainelMadeiraTutorial" unique_id=2028133573]
+position = Vector2(22.643555, 637.16797)
+scale = Vector2(0.3784946, 0.3705752)
+texture = ExtResource("3_j3i4s")
+metadata/_edit_lock_ = true
+
+[node name="EstouPronto" type="Button" parent="PainelMadeiraTutorial" unique_id=639660157]
+offset_left = -357.7727
+offset_top = 543.7168
+offset_right = 416.64722
+offset_bottom = 717.8761
+theme_override_styles/normal = SubResource("StyleBoxEmpty_emq6t")
+metadata/_edit_lock_ = true
+
+[node name="Mensagem" type="Label" parent="PainelMadeiraTutorial" unique_id=623633036]
+offset_left = -1330.0615
+offset_top = -346.7456
+offset_right = 1363.9385
+offset_bottom = 433.42572
+theme_override_fonts/font = SubResource("FontVariation_j3i4s")
+theme_override_font_sizes/font_size = 60
+text = "Olá, aventureiro! 🌲✨
+
+Mauro está perdido no labirinto e precisa muito da tua ajuda para encontrar a saída!
+Para guiar o Mauro até lá, você precisará de criar um ALGORITMO, que é uma
+sequência de passos para realizar uma tarefa.
+
+Se você der todas as instruções certas, Mauro chegará em casa com segurança!
+
+Estás pronto para treinar o teu cérebro e salvar o Mauro? "
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="PainelMadeiraTutorial/EstouPronto" to="." method="_on_estou_pronto_pressed"]

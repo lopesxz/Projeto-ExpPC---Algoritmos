@@ -4,6 +4,7 @@ extends CanvasLayer
 @onready var muito_bem_label: Label = $MuitoBemLabel
 @onready var mao_aponta: Sprite2D = $Aponta
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var disable_top_ui: Label = $DisableTopUI
 
 
 func _ready() -> void:
@@ -24,6 +25,7 @@ func _on_area_montagem_comando_adicionado() -> void:
 	muito_bem_label.visible = false
 
 func _on_botao_sim_pressed() -> void:
+	disable_top_ui.visible = false
 	apagar_tudo_label.visible = false
 	mao_aponta.visible = false
 	muito_bem_label.visible = true
