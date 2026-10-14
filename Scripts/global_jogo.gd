@@ -13,6 +13,6 @@ func proxima_fase() -> void:
 			get_tree().change_scene_to_packed(scene)
 		else:
 			print("Fim das fases! A voltar ao menu principal...")
-			get_tree().change_scene_to_file("res://Cenas/menu_principal.tscn")
+			get_tree().change_scene_to_file("res://Cenas/Menu/menu_principal.tscn")
 	else:
 		print("Nao ha nodo objetivo!!s")

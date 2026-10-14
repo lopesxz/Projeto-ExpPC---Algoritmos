@@ -1804,6 +1804,7 @@ offset_bottom = 62.0
 mouse_filter = 0
 
 [node name="Aponta" type="Sprite2D" parent="InterfaceBlocos/Tutorial" unique_id=338185564]
+visible = false
 position = Vector2(607.00006, 50.00001)
 rotation = 0.7679449
 scale = Vector2(0.32601547, 0.3160156)
@@ -1814,6 +1815,7 @@ root_node = NodePath("../../..")
 libraries/ = SubResource("AnimationLibrary_yjt2h")
 
 [node name="DeslocamentoLabel" type="Label" parent="InterfaceBlocos/Tutorial" unique_id=1594884706]
+visible = false
 modulate = Color(0, 0, 0, 1)
 offset_left = 753.0
 offset_top = 154.0
