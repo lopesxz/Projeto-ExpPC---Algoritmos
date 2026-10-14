@@ -163,6 +163,7 @@ func _on_area_montagem_passos_prontos(lista_blocos):
 		GerenciadorLog.finalizar_tentativa(true)
 		if sucesso: sucesso.visible = true
 		GlobalJogo.proxima_fase()
+		GerenciadorLog.reiniciar_e_continuar_cronometro()
 
 func _on_botao_reiniciar_pressed():
 	var aviso_label = _obter_ui("AvisoLabel")
