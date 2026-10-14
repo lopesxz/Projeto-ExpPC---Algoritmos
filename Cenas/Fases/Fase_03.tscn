@@ -1568,9 +1568,6 @@ offset_right = 256.0
 offset_bottom = 98.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "
-
-O BITO NÃO CONSEGUIU CHEGAR AO SEU DESTINO :("
 
 [node name="Reiniciar" parent="InterfaceBlocos/Control/AreaMontagem/CanvasLayer/AvisoLabel" index="0" unique_id=992388206]
 offset_left = 75.0

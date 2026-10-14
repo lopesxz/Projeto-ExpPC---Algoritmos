@@ -1667,7 +1667,6 @@ para levar o Mauro até o destino!"
 horizontal_alignment = 1
 
 [node name="DisableTopUI" type="Label" parent="InterfaceBlocos/Tutorial" unique_id=849272856]
-visible = false
 offset_left = 648.0
 offset_right = 1156.0
 offset_bottom = 62.0
