@@ -1596,7 +1596,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_li2s5"]
 resource_name = "aponta_apagartudo"
-length = 0.6666667
+length = 1.0666667
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1605,10 +1605,39 @@ tracks/0/path = NodePath("InterfaceBlocos/Tutorial/Aponta:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6666667),
+"times": PackedFloat32Array(0, 0.46666667, 1.0333333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(607.00006, 50.00001), Vector2(624.00006, 50.00001), Vector2(607.00006, 50.00001)]
+"values": [Vector2(629, 60.000008), Vector2(648, 60.000008), Vector2(629, 60.000008)]
+}
+
+[sub_resource type="Animation" id="Animation_a4hmx"]
+resource_name = "aponta_deslocamento"
+length = 0.96666664
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InterfaceBlocos/Tutorial/Aponta:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.20000002, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1069, 108.00003), Vector2(1069, 108.00003)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("InterfaceBlocos/Tutorial/Aponta:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.2, 0.36666667, 0.93333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.7679449, -0.18325958, 0.7679449]
 }
 
 [sub_resource type="Animation" id="Animation_lcxbn"]
@@ -1644,6 +1673,7 @@ tracks/1/keys = {
 _data = {
 &"RESET": SubResource("Animation_l2smn"),
 &"aponta_apagartudo": SubResource("Animation_li2s5"),
+&"aponta_deslocamento": SubResource("Animation_a4hmx"),
 &"aponta_virar": SubResource("Animation_lcxbn")
 }
 
@@ -1774,7 +1804,6 @@ offset_bottom = 62.0
 mouse_filter = 0
 
 [node name="Aponta" type="Sprite2D" parent="InterfaceBlocos/Tutorial" unique_id=338185564]
-visible = false
 position = Vector2(607.00006, 50.00001)
 rotation = 0.7679449
 scale = Vector2(0.32601547, 0.3160156)
@@ -1783,6 +1812,17 @@ texture = ExtResource("7_a4hmx")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="InterfaceBlocos/Tutorial" unique_id=797870070]
 root_node = NodePath("../../..")
 libraries/ = SubResource("AnimationLibrary_yjt2h")
+
+[node name="DeslocamentoLabel" type="Label" parent="InterfaceBlocos/Tutorial" unique_id=1594884706]
+modulate = Color(0, 0, 0, 1)
+offset_left = 753.0
+offset_top = 154.0
+offset_right = 1138.0
+offset_bottom = 229.0
+text = "Agora você pode utilizar as setas de para deslocar
+blocos selecionados!
+"
+horizontal_alignment = 1
 
 [connection signal="comando_adicionado" from="InterfaceBlocos/Control/AreaMontagem" to="InterfaceBlocos/Tutorial" method="_on_area_montagem_comando_adicionado"]
 

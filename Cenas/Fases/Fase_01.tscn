@@ -1554,10 +1554,22 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(607.00006, 50.00001)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("InterfaceBlocos/Tutorial/Aponta:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.7679449]
+}
 
 [sub_resource type="Animation" id="Animation_li2s5"]
 resource_name = "aponta_apagartudo"
-length = 0.6666667
+length = 1.0666667
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1566,10 +1578,10 @@ tracks/0/path = NodePath("InterfaceBlocos/Tutorial/Aponta:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6666667),
+"times": PackedFloat32Array(0, 0.46666667, 1.0333333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(607.00006, 50.00001), Vector2(624.00006, 50.00001), Vector2(607.00006, 50.00001)]
+"values": [Vector2(629, 60.000008), Vector2(648, 60.000008), Vector2(629, 60.000008)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_88cpa"]
@@ -1664,7 +1676,7 @@ mouse_filter = 0
 [node name="Aponta" type="Sprite2D" parent="InterfaceBlocos/Tutorial" unique_id=2101313429]
 visible = false
 position = Vector2(607.00006, 50.00001)
-rotation = 1.5707964
+rotation = 0.7679449
 scale = Vector2(0.32601547, 0.3160156)
 texture = ExtResource("7_l2smn")
 
@@ -1674,5 +1686,6 @@ libraries/ = SubResource("AnimationLibrary_88cpa")
 
 [connection signal="comando_adicionado" from="InterfaceBlocos/Control/AreaMontagem" to="InterfaceBlocos/Tutorial" method="_on_area_montagem_comando_adicionado"]
 [connection signal="pressed" from="InterfaceBlocos/Control/AreaMontagem/ApagarTodos" to="InterfaceBlocos/Tutorial" method="_on_apagar_todos_pressed"]
+[connection signal="pressed" from="InterfaceBlocos/Control/AreaMontagem/ConfirmacaoApagar/BotaoSim" to="InterfaceBlocos/Tutorial" method="_on_botao_sim_pressed"]
 
 [editable path="InterfaceBlocos"]

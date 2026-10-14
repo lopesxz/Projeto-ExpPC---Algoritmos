@@ -20,13 +20,11 @@ func _ready() -> void:
 	
 	animation_player.play("aponta_apagartudo")
 
-func _on_apagar_todos_pressed() -> void:
-	apagar_tudo_label.visible = false
-	mao_aponta.visible = false
-	
-	animation_player.stop()
-	
-	muito_bem_label.visible = true
-
 func _on_area_montagem_comando_adicionado() -> void:
 	muito_bem_label.visible = false
+
+func _on_botao_sim_pressed() -> void:
+	apagar_tudo_label.visible = false
+	mao_aponta.visible = false
+	muito_bem_label.visible = true
+	animation_player.stop()
