@@ -1633,6 +1633,7 @@ offset_bottom = 241.0
 script = ExtResource("7_li2s5")
 
 [node name="ApagarTudoLabel" type="Label" parent="InterfaceBlocos/Tutorial" unique_id=1451754692]
+visible = false
 modulate = Color(0, 0, 0, 1)
 offset_left = 636.0
 offset_top = 415.0
@@ -1643,6 +1644,7 @@ blocos, vamos apagar tudo antes de começar!"
 horizontal_alignment = 1
 
 [node name="MuitoBemLabel" type="Label" parent="InterfaceBlocos/Tutorial" unique_id=227024996]
+visible = false
 modulate = Color(0, 0, 0, 1)
 offset_left = 636.0
 offset_top = 415.0
@@ -1660,6 +1662,7 @@ offset_bottom = 62.0
 mouse_filter = 0
 
 [node name="Aponta" type="Sprite2D" parent="InterfaceBlocos/Tutorial" unique_id=2101313429]
+visible = false
 position = Vector2(607.00006, 50.00001)
 rotation = 1.5707964
 scale = Vector2(0.32601547, 0.3160156)

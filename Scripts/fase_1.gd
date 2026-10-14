@@ -5,7 +5,6 @@ extends CanvasLayer
 @onready var mao_aponta: Sprite2D = $Aponta
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-var f = 0 # flag pra detectar se ele ainda ta no tutorial
 
 func _ready() -> void:
 	var bloco_avancar: Control = get_tree().current_scene.find_child("Avancar")
