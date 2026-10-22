@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cuwas8i23fq4h" path="res://Cenas/Fases/Fase_01.tscn" id="3_fieks"]
 [ext_resource type="Script" uid="uid://dfj6juyb3cwco" path="res://Scripts/tutorial_1.gd" id="6_e8ai8"]
 [ext_resource type="Texture2D" uid="uid://ci4g7kknkefas" path="res://Imagens/aberta.png" id="7_2s4eu"]
+[ext_resource type="Texture2D" uid="uid://2aarwnyfp6h5" path="res://Imagens/Painel Madeira Tutorial.png" id="7_aqgf2"]
 [ext_resource type="Texture2D" uid="uid://cfp1w115ehcw2" path="res://Imagens/fechada.png" id="8_ah2c3"]
 [ext_resource type="Texture2D" uid="uid://d22trypxr30op" path="res://Imagens/aponta.png" id="8_aqgf2"]
 
@@ -1767,6 +1768,12 @@ offset_bottom = -14.0
 [node name="Tutorial" type="CanvasLayer" parent="." unique_id=174852709]
 script = ExtResource("6_e8ai8")
 
+[node name="PainelMadeiraTutorial" type="Sprite2D" parent="Tutorial" unique_id=1258439912]
+visible = false
+position = Vector2(576, 283)
+scale = Vector2(0.12620194, 0.12621526)
+texture = ExtResource("7_aqgf2")
+
 [node name="Mao" type="Sprite2D" parent="Tutorial" unique_id=1472667738]
 visible = false
 position = Vector2(892, 409.00003)
@@ -1781,12 +1788,12 @@ texture = ExtResource("8_aqgf2")
 
 [node name="Comandos" type="Label" parent="Tutorial" unique_id=199142771]
 visible = false
-offset_left = 646.0
-offset_top = 327.0
-offset_right = 1146.0
-offset_bottom = 390.0
+offset_left = 329.0
+offset_top = 267.0
+offset_right = 829.0
+offset_bottom = 330.0
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
 text = "Arraste comandos para
 mover o Mauro!"
@@ -1794,39 +1801,41 @@ horizontal_alignment = 1
 
 [node name="Selecione" type="Label" parent="Tutorial" unique_id=543085040]
 visible = false
-offset_left = 645.0
-offset_top = 314.0
-offset_right = 1153.0
-offset_bottom = 404.0
+offset_left = 709.0
+offset_top = 287.0
+offset_right = 1086.0
+offset_bottom = 375.0
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 18
 text = "Opa! Parece que adicionamos um
-bloco a mais! Clique em um dos blocos."
+bloco a mais! 
+Clique em um dos blocos."
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Apaga" type="Label" parent="Tutorial" unique_id=1886106098]
 visible = false
-offset_left = 644.0
-offset_top = 358.0
-offset_right = 1154.0
-offset_bottom = 391.0
+offset_left = 648.0
+offset_top = 298.0
+offset_right = 1158.0
+offset_bottom = 357.0
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
-text = "Agora, clique na lixeira para apagá-lo."
+text = "Agora, clique 
+na lixeira para apagá-lo."
 horizontal_alignment = 1
 vertical_alignment = 3
 
 [node name="Executa" type="Label" parent="Tutorial" unique_id=1206553080]
 visible = false
 offset_left = 644.0
-offset_top = 308.0
+offset_top = 290.0
 offset_right = 1152.0
-offset_bottom = 398.0
+offset_bottom = 380.0
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
 text = "Perfeito! Agora clique nesse
 botão para executar o seu
@@ -1839,6 +1848,7 @@ root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_ah2c3")
 
 [node name="DisableTopUI" type="Label" parent="Tutorial" unique_id=1273162861]
+visible = false
 offset_left = 648.0
 offset_right = 1156.0
 offset_bottom = 62.0

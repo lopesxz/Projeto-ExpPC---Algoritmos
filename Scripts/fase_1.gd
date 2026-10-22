@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var mao_aponta: Sprite2D = $Aponta
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var disable_top_ui: Label = $DisableTopUI
+@onready var painel_madeira: Sprite2D = $PainelMadeiraTutorial
 
 
 func _ready() -> void:
@@ -15,6 +16,7 @@ func _ready() -> void:
 	for i in range(14):
 		area_montagem.adicionar_bloco(bloco_avancar.duplicate())
 	
+	painel_madeira.visible = true
 	mao_aponta.visible = true
 	apagar_tudo_label.visible = true
 	muito_bem_label.visible = false
@@ -22,6 +24,7 @@ func _ready() -> void:
 	animation_player.play("aponta_apagartudo")
 
 func _on_area_montagem_comando_adicionado() -> void:
+	painel_madeira.visible = false
 	muito_bem_label.visible = false
 
 func _on_botao_sim_pressed() -> void:

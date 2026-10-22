@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://crdx6sojghgm6" path="res://Cenas/Fases/byte_(personagem).tscn" id="2_nqky4"]
 [ext_resource type="PackedScene" uid="uid://cw1mvsoxhkh5t" path="res://Cenas/Fases/Fase_02.tscn" id="3_1qr8w"]
 [ext_resource type="PackedScene" uid="uid://bjcnsbiqoy4o2" path="res://Cenas/Areas/interface_blocos.tscn" id="3_e5lar"]
+[ext_resource type="Texture2D" uid="uid://2aarwnyfp6h5" path="res://Imagens/Painel Madeira Tutorial.png" id="7_88cpa"]
 [ext_resource type="Texture2D" uid="uid://d22trypxr30op" path="res://Imagens/aponta.png" id="7_l2smn"]
 [ext_resource type="Script" uid="uid://cx4313p8papv6" path="res://Scripts/fase_1.gd" id="7_li2s5"]
 
@@ -1644,27 +1645,10 @@ offset_bottom = 241.0
 [node name="Tutorial" type="CanvasLayer" parent="InterfaceBlocos" unique_id=1942765394]
 script = ExtResource("7_li2s5")
 
-[node name="ApagarTudoLabel" type="Label" parent="InterfaceBlocos/Tutorial" unique_id=1451754692]
-visible = false
-modulate = Color(0, 0, 0, 1)
-offset_left = 636.0
-offset_top = 415.0
-offset_right = 1145.0
-offset_bottom = 464.0
-text = "Opa, acho que esta fase veio cheia de 
-blocos, vamos apagar tudo antes de começar!"
-horizontal_alignment = 1
-
-[node name="MuitoBemLabel" type="Label" parent="InterfaceBlocos/Tutorial" unique_id=227024996]
-visible = false
-modulate = Color(0, 0, 0, 1)
-offset_left = 636.0
-offset_top = 415.0
-offset_right = 1145.0
-offset_bottom = 464.0
-text = "Muito bem! Agora adicione blocos
-para levar o Mauro até o destino!"
-horizontal_alignment = 1
+[node name="PainelMadeiraTutorial" type="Sprite2D" parent="InterfaceBlocos/Tutorial" unique_id=1057891915]
+position = Vector2(576, 293)
+scale = Vector2(0.13478713, 0.13229166)
+texture = ExtResource("7_88cpa")
 
 [node name="DisableTopUI" type="Label" parent="InterfaceBlocos/Tutorial" unique_id=849272856]
 offset_left = 733.0
@@ -1682,6 +1666,35 @@ texture = ExtResource("7_l2smn")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="InterfaceBlocos/Tutorial" unique_id=2060048487]
 root_node = NodePath("../../..")
 libraries/ = SubResource("AnimationLibrary_88cpa")
+
+[node name="ApagarTudoLabel" type="Label" parent="InterfaceBlocos/Tutorial" unique_id=1489957904]
+visible = false
+offset_left = 371.0
+offset_top = 267.0
+offset_right = 768.0
+offset_bottom = 351.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 18
+text = "Opa, acho que essa fase veio
+ cheia de blocos, vamos apagar tudo
+ antes de começar!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MuitoBemLabel" type="Label" parent="InterfaceBlocos/Tutorial" unique_id=706455132]
+visible = false
+offset_left = 392.0
+offset_top = 265.0
+offset_right = 769.0
+offset_bottom = 353.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 17
+text = "Muito bem! Agora monte seu algoritmo
+para levar o Mauro até o destino!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="comando_adicionado" from="InterfaceBlocos/Control/AreaMontagem" to="InterfaceBlocos/Tutorial" method="_on_area_montagem_comando_adicionado"]
 [connection signal="pressed" from="InterfaceBlocos/Control/AreaMontagem/ApagarTodos" to="InterfaceBlocos/Tutorial" method="_on_apagar_todos_pressed"]

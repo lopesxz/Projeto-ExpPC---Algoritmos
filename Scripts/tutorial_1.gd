@@ -7,6 +7,7 @@ extends CanvasLayer
 @onready var selecione_label: Label = $Selecione
 @onready var apaga_label: Label = $Apaga
 @onready var executa_label: Label = $Executa
+@onready var painel_madeira: Sprite2D = $PainelMadeiraTutorial
 
 @onready var disable_top_ui: Label = $DisableTopUI
 
@@ -16,11 +17,13 @@ func _ready() -> void:
 	#disable_top_ui.visible = true
 	mao.visible = true
 	comandos_label.visible = true
+	painel_madeira.visible = true
 	
 	selecione_label.visible = false
 	mao_aponta.visible = false
 	apaga_label.visible = false
 	executa_label.visible = false
+	
 	
 	animation_player.play("mao-1")
 
@@ -54,3 +57,4 @@ func _on_apagar_1_pressed() -> void:
 func _on_executar_pressed() -> void:
 	mao_aponta.visible = false
 	executa_label.visible = false
+	painel_madeira.visible = false
