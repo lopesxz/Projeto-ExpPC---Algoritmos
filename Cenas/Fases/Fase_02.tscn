@@ -5,8 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://crdx6sojghgm6" path="res://Cenas/Fases/byte_(personagem).tscn" id="2_ixgj2"]
 [ext_resource type="PackedScene" uid="uid://bjcnsbiqoy4o2" path="res://Cenas/Areas/interface_blocos.tscn" id="3_0niix"]
 [ext_resource type="PackedScene" uid="uid://1qncdp12koca" path="res://Cenas/Fases/Fase_03.tscn" id="3_tcu5t"]
-[ext_resource type="Script" uid="uid://5aygd2c7ejgb" path="res://Cenas/Fases/fase_2.gd" id="6_lcxbn"]
+[ext_resource type="Script" uid="uid://5aygd2c7ejgb" path="res://Scripts/fase_2.gd" id="6_lcxbn"]
 [ext_resource type="Texture2D" uid="uid://d22trypxr30op" path="res://Imagens/aponta.png" id="7_a4hmx"]
+[ext_resource type="Texture2D" uid="uid://2aarwnyfp6h5" path="res://Imagens/Painel Madeira Tutorial.png" id="8_a4hmx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_stnj5"]
 texture = ExtResource("1_mtjp4")
@@ -1785,17 +1786,6 @@ metadata/_edit_lock_ = true
 [node name="Tutorial" type="CanvasLayer" parent="InterfaceBlocos" unique_id=928690413]
 script = ExtResource("6_lcxbn")
 
-[node name="AdicioneLabel" type="Label" parent="InterfaceBlocos/Tutorial" unique_id=1662643092]
-visible = false
-modulate = Color(0, 0, 0, 1)
-offset_left = 644.0
-offset_top = 349.0
-offset_right = 1153.0
-offset_bottom = 398.0
-text = "Novos blocos surgiram, quando precisar, utilize-os
- para ajudar Mauro a virar para os lados."
-horizontal_alignment = 1
-
 [node name="DisableTopUI" type="Label" parent="InterfaceBlocos/Tutorial" unique_id=1894594224]
 visible = false
 offset_left = 648.0
@@ -1814,17 +1804,43 @@ texture = ExtResource("7_a4hmx")
 root_node = NodePath("../../..")
 libraries/ = SubResource("AnimationLibrary_yjt2h")
 
-[node name="DeslocamentoLabel" type="Label" parent="InterfaceBlocos/Tutorial" unique_id=1594884706]
+[node name="PainelMadeiraTutorial" type="Sprite2D" parent="InterfaceBlocos/Tutorial" unique_id=2012716265]
 visible = false
-modulate = Color(0, 0, 0, 1)
-offset_left = 753.0
-offset_top = 154.0
-offset_right = 1138.0
-offset_bottom = 229.0
-text = "Agora você pode utilizar as setas de para deslocar
+position = Vector2(576, 293)
+scale = Vector2(0.13478713, 0.13229166)
+texture = ExtResource("8_a4hmx")
+
+[node name="AdicioneLabel" type="Label" parent="InterfaceBlocos/Tutorial" unique_id=825432873]
+visible = false
+offset_left = 373.0
+offset_top = 260.0
+offset_right = 786.0
+offset_bottom = 365.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 17
+text = "Novos blocos surgiram!
+ Quando precisar, utilize-os para 
+ajudar Mauro a virar
+ para os lados."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DeslocamentoLabel" type="Label" parent="InterfaceBlocos/Tutorial" unique_id=1146852256]
+visible = false
+offset_left = 392.0
+offset_top = 265.0
+offset_right = 769.0
+offset_bottom = 353.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 17
+text = "Agora você pode utilizar as setas
+ de para deslocar
 blocos selecionados!
 "
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="comando_adicionado" from="InterfaceBlocos/Control/AreaMontagem" to="InterfaceBlocos/Tutorial" method="_on_area_montagem_comando_adicionado"]
 

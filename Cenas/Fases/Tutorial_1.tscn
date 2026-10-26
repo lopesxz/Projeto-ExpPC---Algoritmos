@@ -1801,10 +1801,10 @@ horizontal_alignment = 1
 
 [node name="Selecione" type="Label" parent="Tutorial" unique_id=543085040]
 visible = false
-offset_left = 709.0
-offset_top = 287.0
-offset_right = 1086.0
-offset_bottom = 375.0
+offset_left = 389.0
+offset_top = 254.0
+offset_right = 766.0
+offset_bottom = 342.0
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 18
@@ -1816,10 +1816,10 @@ vertical_alignment = 1
 
 [node name="Apaga" type="Label" parent="Tutorial" unique_id=1886106098]
 visible = false
-offset_left = 648.0
-offset_top = 298.0
-offset_right = 1158.0
-offset_bottom = 357.0
+offset_left = 322.0
+offset_top = 261.0
+offset_right = 832.0
+offset_bottom = 320.0
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
@@ -1830,10 +1830,10 @@ vertical_alignment = 3
 
 [node name="Executa" type="Label" parent="Tutorial" unique_id=1206553080]
 visible = false
-offset_left = 644.0
-offset_top = 290.0
-offset_right = 1152.0
-offset_bottom = 380.0
+offset_left = 324.0
+offset_top = 252.0
+offset_right = 832.0
+offset_bottom = 342.0
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20

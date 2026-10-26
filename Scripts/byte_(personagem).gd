@@ -13,6 +13,10 @@ var tempo_segundos = 0
 @onready var tuc_sound = $TucSound
 
 func _ready():
+	if "Fase_04" in get_tree().current_scene.scene_file_path:
+		direcao = Vector2.RIGHT
+	else:
+		direcao = Vector2.UP # Valor predefinido para as outras fases
 	posicao_inicial = position
 	sprite.region_enabled = true
 	atualizar_sprite()

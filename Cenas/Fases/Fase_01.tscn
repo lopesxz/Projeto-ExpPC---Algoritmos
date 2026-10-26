@@ -1646,6 +1646,7 @@ offset_bottom = 241.0
 script = ExtResource("7_li2s5")
 
 [node name="PainelMadeiraTutorial" type="Sprite2D" parent="InterfaceBlocos/Tutorial" unique_id=1057891915]
+visible = false
 position = Vector2(576, 293)
 scale = Vector2(0.13478713, 0.13229166)
 texture = ExtResource("7_88cpa")
