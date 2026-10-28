@@ -185,7 +185,8 @@ func _on_botao_reiniciar_pressed():
 		bloco_com_erro = null 
 	
 	position = posicao_inicial
-	direcao = Vector2.UP
+	if "Fase_04" in get_tree().current_scene.scene_file_path:
+		direcao = Vector2.RIGHT
 	atualizar_sprite()
 	
 	tentativas += 1

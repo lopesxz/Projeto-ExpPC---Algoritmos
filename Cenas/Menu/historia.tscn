@@ -10,6 +10,9 @@
 
 [sub_resource type="FontVariation" id="FontVariation_j3i4s"]
 base_font = ExtResource("5_j3i4s")
+spacing_space = -7
+spacing_top = -7
+spacing_bottom = -1
 
 [node name="Control" type="Control" unique_id=1083686983]
 layout_mode = 3
@@ -52,21 +55,21 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_emq6t")
 metadata/_edit_lock_ = true
 
 [node name="Mensagem" type="Label" parent="PainelMadeiraTutorial" unique_id=623633036]
-offset_left = -1332.2476
-offset_top = -334.57446
-offset_right = 1403.7524
-offset_bottom = 575.42554
+offset_left = -1344.4702
+offset_top = -342.17896
+offset_right = 1391.5298
+offset_bottom = 567.82104
 theme_override_fonts/font = SubResource("FontVariation_j3i4s")
-theme_override_font_sizes/font_size = 54
-text = "Olá, aventureiro! 🌲✨
+theme_override_font_sizes/font_size = 61
+text = "OLÁ, AVENTUREIRO!🌲✨
 
 Mauro está perdido no labirinto e precisa muito da tua ajuda
- para encontrar a saída!
+ para encontrar a saída, que está no bloco verde!
 
-Para guiar o Mauro até lá, você precisará de criar um ALGORITMO, que é um
+Para guiar Mauro até lá, você precisa criar um ALGORITMO, que é um
 conjunto de passos para realizar uma tarefa.
 
-Se você der todas as instruções certas, Mauro chegará em casa com segurança!
+Com as instruções certas, Mauro chegará em casa com segurança!
 
 Estás pronto para treinar o teu cérebro e salvar o Mauro? "
 horizontal_alignment = 1
