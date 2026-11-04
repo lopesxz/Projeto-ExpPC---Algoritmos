@@ -1775,6 +1775,12 @@ offset_top = 110.0
 offset_bottom = -93.0
 metadata/_edit_lock_ = true
 
+[node name="Repita" parent="InterfaceBlocos/Control/AreaEstoque" index="3" unique_id=1736452990]
+offset_left = 614.0
+offset_top = 169.0
+offset_right = 852.0
+offset_bottom = 214.0
+
 [node name="TempoTotalLabel" parent="InterfaceBlocos/Control" index="2" unique_id=1985459355]
 metadata/_edit_lock_ = true
 

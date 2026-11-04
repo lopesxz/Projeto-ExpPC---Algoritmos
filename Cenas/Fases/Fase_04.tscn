@@ -1575,4 +1575,22 @@ offset_top = 107.0
 offset_right = 432.0
 offset_bottom = 151.0
 
+[node name="Avancar" parent="InterfaceBlocos/Control/AreaEstoque" parent_id_path=PackedInt32Array(571148182, 1309929412) index="0" unique_id=1887600487]
+offset_top = 38.0
+offset_bottom = -165.0
+
+[node name="Virar Esquerda" parent="InterfaceBlocos/Control/AreaEstoque" parent_id_path=PackedInt32Array(571148182, 1309929412) index="1" unique_id=602368564]
+offset_top = 99.0
+offset_bottom = -104.0
+
+[node name="Virar Direita" parent="InterfaceBlocos/Control/AreaEstoque" parent_id_path=PackedInt32Array(571148182, 1309929412) index="2" unique_id=131426477]
+offset_top = 99.0
+offset_bottom = -104.0
+
+[node name="Repita" parent="InterfaceBlocos/Control/AreaEstoque" parent_id_path=PackedInt32Array(571148182, 1309929412) index="3" unique_id=1736452990]
+offset_left = 231.0
+offset_top = 421.0
+offset_right = 469.0
+offset_bottom = 466.0
+
 [editable path="InterfaceBlocos"]
