@@ -147,7 +147,12 @@ func _on_area_montagem_passos_prontos(lista_blocos):
 			virar_esquerda()
 		elif comando == "VIRAR À DIREITA" or comando == "VIRAR_DIREITA":
 			virar_direita()
-			
+		elif comando == "REPITA":
+			var repita_ok = await executar_repita(item)
+			if repita_ok == false:
+				retangulo.color = cor_original
+				break
+
 		await get_tree().create_timer(0.5).timeout
 		retangulo.color = cor_original
 
@@ -168,6 +173,40 @@ func _on_area_montagem_passos_prontos(lista_blocos):
 		if sucesso: sucesso.visible = true
 		GlobalJogo.proxima_fase()
 		GerenciadorLog.reiniciar_e_continuar_cronometro()
+
+# Executa os blocos que estão dentro do REPITA a quantidade de vezes escolhida
+func executar_repita(bloco_repita):
+	for i in bloco_repita.obter_vezes():
+		for item in bloco_repita.obter_blocos():
+			var comando = item.nome_comando
+			var retangulo = item.get_node("ColorRect")
+			var cor_original = retangulo.color
+
+			retangulo.color = Color.WEB_GRAY
+			await get_tree().create_timer(0.3).timeout
+
+			if comando == "AVANÇAR":
+				var passo_ok = await avancar()
+				if passo_ok == false:
+					bloco_com_erro = item
+					cor_padrao_erro = cor_original
+
+					GerenciadorLog.finalizar_tentativa(false)
+
+					var aviso = _obter_ui("AvisoLabel")
+					var botao = _obter_ui("Reiniciar")
+					if aviso: aviso.visible = true
+					if botao: botao.visible = true
+					return false
+
+			elif comando == "VIRAR À ESQUERDA" or comando == "VIRAR_ESQUERDA":
+				virar_esquerda()
+			elif comando == "VIRAR À DIREITA" or comando == "VIRAR_DIREITA":
+				virar_direita()
+
+			await get_tree().create_timer(0.5).timeout
+			retangulo.color = cor_original
+	return true
 
 func _on_botao_reiniciar_pressed():
 	var aviso_label = _obter_ui("AvisoLabel")

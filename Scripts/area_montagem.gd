@@ -6,7 +6,7 @@ func adicionar_bloco(bloco):
 	var lista = $ListaBlocos
 	var aviso_limite = get_tree().current_scene.find_child("LimiteLabel", true, false)
 	
-	if lista.get_child_count() >= 14:
+	if contar_blocos() >= 14:
 		if aviso_limite:
 			aviso_limite.visible = true
 		return
@@ -17,6 +17,17 @@ func adicionar_bloco(bloco):
 		if aviso_limite:
 			aviso_limite.visible = false
 		comando_adicionado.emit()
+
+# Conta os blocos da montagem, incluindo os que estão dentro dos blocos REPITA
+func contar_blocos():
+	var total = 0
+	for bloco in $ListaBlocos.get_children():
+		if bloco.is_queued_for_deletion():
+			continue
+		total += 1
+		if bloco.has_method("obter_blocos"):
+			total += bloco.obter_blocos().size()
+	return total
 
 # 1. Garante que só aceita blocos válidos do estoque (mata o clique fantasma)
 func _can_drop_data(at_position, data):
@@ -91,7 +102,7 @@ func _on_seta_cima_pressed():
 	if GlobalJogo.bloco_selecionado and is_instance_valid(GlobalJogo.bloco_selecionado):
 		var bloco = GlobalJogo.bloco_selecionado
 		var lista = bloco.get_parent()
-		if lista and lista.name == "ListaBlocos":
+		if lista and (lista.name == "ListaBlocos" or lista.name == "ListaInterna"):
 			var indice_atual = bloco.get_index()
 			if indice_atual > 0:
 				lista.move_child(bloco, indice_atual - 1)
@@ -106,7 +117,7 @@ func _on_seta_baixo_pressed():
 	if GlobalJogo.bloco_selecionado and is_instance_valid(GlobalJogo.bloco_selecionado):
 		var bloco = GlobalJogo.bloco_selecionado
 		var lista = bloco.get_parent()
-		if lista and lista.name == "ListaBlocos":
+		if lista and (lista.name == "ListaBlocos" or lista.name == "ListaInterna"):
 			var indice_atual = bloco.get_index()
 			var total_filhos = lista.get_child_count()
 			if indice_atual < total_filhos - 1:

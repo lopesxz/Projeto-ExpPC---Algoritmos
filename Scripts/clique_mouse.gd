@@ -9,10 +9,33 @@ signal comando_selecionado
 func _ready():
 	$ColorRect/Label.text = texto_do_bloco
 	cor_original_bloco = $ColorRect.color
+
+# Está na Área de Montagem: direto na ListaBlocos ou dentro de um bloco REPITA
+func _esta_na_montagem():
+	return get_parent().name == "ListaBlocos" or get_parent().name == "ListaInterna"
+
+# Se este bloco está dentro de um REPITA, retorna o REPITA
+func _obter_repita_pai():
+	if get_parent().name == "ListaInterna":
+		return get_parent().get_parent().get_parent()
+	return null
+
+# Soltar um bloco em cima de um bloco que está dentro do REPITA coloca ele no REPITA
+func _can_drop_data(at_position, data):
+	var repita = _obter_repita_pai()
+	if repita:
+		return repita._can_drop_data(at_position, data)
+	return false
+
+func _drop_data(at_position, data):
+	var repita = _obter_repita_pai()
+	if repita:
+		repita._drop_data(at_position, data)
+
 # Essa função nativa do Godot é ativada automaticamente quando você clica e arrasta esse nó
 func _get_drag_data(at_position):
 	# Se o pai dele for a ListaBlocos, ele NÃO PODE ser arrastado de novo
-	if get_parent().name == "ListaBlocos":
+	if _esta_na_montagem():
 		return null
 		
 	# Caso contrário, faz a prévia de arraste normal da estante
@@ -42,8 +65,8 @@ func _get_drag_data(at_position):
 func _gui_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		# Se ele está na Área de Montagem, ele interage com a seleção
-		if get_parent().name == "ListaBlocos":
-			
+		if _esta_na_montagem():
+
 			# SE JÁ ESTÁ SELECIONADO: Clicar de novo desmarca ele (Toggle)
 			if selecionado:
 				desmarcar()
@@ -67,6 +90,10 @@ func ressetar_selecao_geral():
 		# Verifica se o irmão tem o método e garante que não é o próprio bloco atual
 		if irmao != self and irmao.has_method("desmarcar"):
 			irmao.desmarcar()
+	# O bloco selecionado pode estar em outra lista (dentro ou fora de um REPITA)
+	if GlobalJogo.bloco_selecionado and is_instance_valid(GlobalJogo.bloco_selecionado) and GlobalJogo.bloco_selecionado != self:
+		if GlobalJogo.bloco_selecionado.has_method("desmarcar"):
+			GlobalJogo.bloco_selecionado.desmarcar()
 
 func desmarcar():
 	selecionado = false

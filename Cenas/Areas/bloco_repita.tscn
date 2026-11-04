@@ -1,0 +1,71 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/bloco_repita.gd" id="1_repita"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_corpo"]
+content_margin_left = 16.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 10.0
+bg_color = Color(0.29803923, 0.5921569, 1, 1)
+
+[node name="BlocoRepita" type="VBoxContainer" unique_id=1736452981]
+custom_minimum_size = Vector2(180, 40)
+offset_right = 180.0
+offset_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 0
+theme_override_constants/separation = 0
+script = ExtResource("1_repita")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1736452982]
+custom_minimum_size = Vector2(180, 40)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+color = Color(0.29803923, 0.5921569, 1, 1)
+
+[node name="HBox" type="HBoxContainer" parent="ColorRect" unique_id=1736452983]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="LabelRepita" type="Label" parent="ColorRect/HBox" unique_id=1736452984]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "REPITA"
+vertical_alignment = 1
+
+[node name="Vezes" type="SpinBox" parent="ColorRect/HBox" unique_id=1736452985]
+layout_mode = 2
+size_flags_vertical = 4
+min_value = 1.0
+max_value = 10.0
+value = 2.0
+alignment = 1
+
+[node name="LabelVezes" type="Label" parent="ColorRect/HBox" unique_id=1736452986]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "VEZES"
+vertical_alignment = 1
+
+[node name="Corpo" type="PanelContainer" parent="." unique_id=1736452987]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_corpo")
+
+[node name="ListaInterna" type="VBoxContainer" parent="Corpo" unique_id=1736452988]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 4

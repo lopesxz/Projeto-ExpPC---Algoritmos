@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b43ep786sihe5" path="res://Imagens/botao-play.png" id="6_glwll"]
 [ext_resource type="Script" uid="uid://hrmrhhytevgf" path="res://Scripts/area_estoque.gd" id="7_sju4l"]
 [ext_resource type="PackedScene" uid="uid://bicix0u82f5dk" path="res://Cenas/Areas/bloco_comando.tscn" id="8_oxx4j"]
+[ext_resource type="PackedScene" path="res://Cenas/Areas/bloco_repita.tscn" id="9_repita"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7losc"]
 bg_color = Color(0.03529412, 1, 0.3254902, 1)
@@ -263,6 +264,13 @@ offset_bottom = -131.0
 tooltip_text = "AA"
 texto_do_bloco = "VIRAR À DIREITA"
 nome_comando = "VIRAR_DIREITA"
+
+[node name="Repita" parent="Control/AreaEstoque" unique_id=1736452990 instance=ExtResource("9_repita")]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 165.0
+offset_right = 376.0
+offset_bottom = 210.0
 
 [node name="TempoTotalLabel" type="Label" parent="Control" unique_id=1985459355]
 layout_mode = 0

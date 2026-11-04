@@ -1765,6 +1765,12 @@ offset_top = 194.0
 offset_right = -964.0
 offset_bottom = -14.0
 
+[node name="Repita" parent="InterfaceBlocos/Control/AreaEstoque" parent_id_path=PackedInt32Array(571148182, 1309929412) index="3" unique_id=1736452990]
+offset_left = 623.0
+offset_top = 313.0
+offset_right = 861.0
+offset_bottom = 358.0
+
 [node name="Tutorial" type="CanvasLayer" parent="." unique_id=174852709]
 script = ExtResource("6_e8ai8")
 
