@@ -1588,9 +1588,9 @@ offset_top = 99.0
 offset_bottom = -104.0
 
 [node name="Repita" parent="InterfaceBlocos/Control/AreaEstoque" parent_id_path=PackedInt32Array(571148182, 1309929412) index="3" unique_id=1736452990]
-offset_left = 231.0
-offset_top = 421.0
-offset_right = 469.0
-offset_bottom = 466.0
+offset_left = 781.0
+offset_top = 82.0
+offset_right = 1019.0
+offset_bottom = 127.0
 
 [editable path="InterfaceBlocos"]

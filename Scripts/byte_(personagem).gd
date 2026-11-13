@@ -17,9 +17,9 @@ func _ready():
 		direcao = Vector2.RIGHT
 	else:
 		direcao = Vector2.UP # Valor predefinido para as outras fases
-	posicao_inicial = position
-	sprite.region_enabled = true
-	atualizar_sprite()
+		posicao_inicial = position
+		sprite.region_enabled = true
+		atualizar_sprite()
 	
 	# Conecta o botão de reiniciar automaticamente ao iniciar a fase de forma segura
 	var btn_reiniciar = _obter_ui("Reiniciar")
@@ -213,6 +213,7 @@ func _on_botao_reiniciar_pressed():
 	var sucesso_label = _obter_ui("SucessoLabel")
 	var botao_reiniciar = _obter_ui("Reiniciar")
 	var contador_label = _obter_ui("ContadorLabel")
+	direcao = Vector2.UP
 	
 	if aviso_label: aviso_label.visible = false
 	if sucesso_label: sucesso_label.visible = false

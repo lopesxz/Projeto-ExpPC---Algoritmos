@@ -98,7 +98,7 @@ func _drop_data(at_position, data):
 		aviso_limite.visible = false
 	if area_montagem:
 		area_montagem.comando_adicionado.emit()
-
+ 
 func _gui_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		if not esta_na_montagem():
