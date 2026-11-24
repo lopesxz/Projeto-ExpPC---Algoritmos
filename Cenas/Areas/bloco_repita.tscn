@@ -1,6 +1,6 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://c7i1ohulfhx0h"]
 
-[ext_resource type="Script" path="res://Scripts/bloco_repita.gd" id="1_repita"]
+[ext_resource type="Script" uid="uid://djp2bvp02n00h" path="res://Scripts/bloco_repita.gd" id="1_repita"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_corpo"]
 content_margin_left = 16.0

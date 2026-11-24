@@ -1,13 +1,15 @@
 [gd_scene format=4 uid="uid://qshq7senr3kn"]
 
 [ext_resource type="Texture2D" uid="uid://3umkl53db4xl" path="res://Imagens/sokoban_tilesheet.png" id="1_mdtvj"]
-[ext_resource type="Script" uid="uid://dqlc7bri7kmpi" path="res://Cenas/Fases/fase_05.gd" id="1_vt210"]
+[ext_resource type="Script" uid="uid://dqlc7bri7kmpi" path="res://Scripts/fase_05.gd" id="1_vt210"]
 [ext_resource type="Script" uid="uid://btx0xkruhnh15" path="res://Scripts/objetivo.gd" id="2_6sgu3"]
 [ext_resource type="PackedScene" uid="uid://crdx6sojghgm6" path="res://Cenas/Fases/byte_(personagem).tscn" id="3_vt210"]
 [ext_resource type="PackedScene" uid="uid://bjcnsbiqoy4o2" path="res://Cenas/Areas/interface_blocos.tscn" id="4_7g7nw"]
 [ext_resource type="Texture2D" uid="uid://2aarwnyfp6h5" path="res://Imagens/Painel Madeira Tutorial.png" id="6_7g7nw"]
+[ext_resource type="Texture2D" uid="uid://ci4g7kknkefas" path="res://Imagens/aberta.png" id="6_ocbek"]
 [ext_resource type="Texture2D" uid="uid://d22trypxr30op" path="res://Imagens/aponta.png" id="8_a5v4c"]
 [ext_resource type="Texture2D" uid="uid://d13rir03pceub" path="res://Imagens/ImagemPróximoMadeira.png" id="9_a5v4c"]
+[ext_resource type="Texture2D" uid="uid://cfp1w115ehcw2" path="res://Imagens/fechada.png" id="9_p224q"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gh7na"]
 
@@ -1541,54 +1543,168 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_gh7na")
 sources/0 = SubResource("TileSetAtlasSource_o062s")
 
-[sub_resource type="Animation" id="Animation_l2smn"]
+[sub_resource type="Animation" id="Animation_e8ai8"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("InterfaceBlocos/Tutorial/Aponta:position")
+tracks/0/path = NodePath("Tutorial/Mao:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(607.00006, 50.00001)]
+"values": [Vector2(892, 409.00003)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("InterfaceBlocos/Tutorial/Aponta:rotation")
+tracks/1/path = NodePath("Tutorial/Mao:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.7679449]
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Tutorial/Mao:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_ocbek")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Tutorial/Aponta:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(846, 157)]
 }
 
-[sub_resource type="Animation" id="Animation_li2s5"]
-resource_name = "aponta_apagartudo"
-length = 1.0666667
+[sub_resource type="Animation" id="Animation_ah2c3"]
+resource_name = "aponta-1"
+length = 0.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("InterfaceBlocos/Tutorial/Aponta:position")
+tracks/0/path = NodePath("Tutorial/Aponta:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.46666667, 1.0333333),
+"times": PackedFloat32Array(0, 0.3, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(629, 60.000008), Vector2(648, 60.000008), Vector2(629, 60.000008)]
+"values": [Vector2(846, 157), Vector2(846, 181.00002), Vector2(846, 157)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ocbek"]
+[sub_resource type="Animation" id="Animation_aqgf2"]
+resource_name = "aponta-1"
+length = 0.8
+loop_mode = 2
+
+[sub_resource type="Animation" id="Animation_2s4eu"]
+resource_name = "setinha-1"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tutorial/Mao:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1048, 396.99997), Vector2(899, 578), Vector2(899, 578), Vector2(735, 116.000046), Vector2(735, 116.000046)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Tutorial/Mao:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2999203, 1.1666666),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Tutorial/Mao:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 1.1, 1.1333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_ocbek"), ExtResource("9_p224q"), ExtResource("9_p224q"), ExtResource("6_ocbek")]
+}
+
+[sub_resource type="Animation" id="Animation_ocbek"]
+resource_name = "mao-2"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tutorial/Mao:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.43333337, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1048, 396.99997), Vector2(899, 462.00006), Vector2(899, 462.00006), Vector2(735, 116.000046), Vector2(735, 116.000046)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Tutorial/Mao:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2999203, 1.1666666),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Tutorial/Mao:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 1.1, 1.1333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_ocbek"), ExtResource("9_p224q"), ExtResource("9_p224q"), ExtResource("6_ocbek")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mbf71"]
 _data = {
-&"RESET": SubResource("Animation_l2smn"),
-&"aponta_apagartudo": SubResource("Animation_li2s5")
+&"RESET": SubResource("Animation_e8ai8"),
+&"aponta-1": SubResource("Animation_ah2c3"),
+&"aponta-2": SubResource("Animation_aqgf2"),
+&"mao-1": SubResource("Animation_2s4eu"),
+&"mao-2": SubResource("Animation_ocbek")
 }
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ocbek"]
@@ -1652,10 +1768,19 @@ offset_bottom = 192.0
 
 [node name="Tutorial" type="CanvasLayer" parent="InterfaceBlocos" unique_id=1726652705]
 
+[node name="Mao" type="Sprite2D" parent="InterfaceBlocos/Tutorial" unique_id=265360451]
+position = Vector2(892, 409.00003)
+scale = Vector2(0.33203125, 0.33203125)
+texture = ExtResource("6_ocbek")
+
+[node name="Aponta" type="Sprite2D" parent="InterfaceBlocos/Tutorial" unique_id=831032435]
+position = Vector2(846, 157)
+scale = Vector2(0.33203125, 0.33203125)
+texture = ExtResource("8_a5v4c")
+
 [node name="PainelMadeiraTutorial" type="Sprite2D" parent="InterfaceBlocos/Tutorial" unique_id=515788208]
-visible = false
 position = Vector2(576, 293)
-scale = Vector2(0.13478713, 0.13229166)
+scale = Vector2(0.16, 0.157)
 texture = ExtResource("6_7g7nw")
 metadata/_edit_lock_ = true
 
@@ -1666,7 +1791,7 @@ offset_right = 1156.0
 offset_bottom = 62.0
 mouse_filter = 0
 
-[node name="DisableTopUI2" type="Label" parent="InterfaceBlocos/Tutorial" unique_id=1640639072]
+[node name="DisableLowerUIAll" type="Label" parent="InterfaceBlocos/Tutorial" unique_id=1640639072]
 visible = false
 offset_left = 643.0
 offset_top = 405.0
@@ -1674,16 +1799,17 @@ offset_right = 1156.0
 offset_bottom = 646.0
 mouse_filter = 0
 
-[node name="Aponta" type="Sprite2D" parent="InterfaceBlocos/Tutorial" unique_id=2081045120]
+[node name="DisableLowerUIExceptRepita" type="Label" parent="InterfaceBlocos/Tutorial" unique_id=1955519051]
 visible = false
-position = Vector2(607.00006, 50.00001)
-rotation = 0.7679449
-scale = Vector2(0.32601547, 0.3160156)
-texture = ExtResource("8_a5v4c")
+offset_left = 643.0
+offset_top = 405.0
+offset_right = 1156.0
+offset_bottom = 539.0
+mouse_filter = 0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="InterfaceBlocos/Tutorial" unique_id=57322320]
-root_node = NodePath("../../..")
-libraries/ = SubResource("AnimationLibrary_ocbek")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="InterfaceBlocos/Tutorial" unique_id=821550658]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_mbf71")
 
 [node name="NovoComandoLabel" type="Label" parent="InterfaceBlocos/Tutorial" unique_id=1422511470]
 visible = false
@@ -1769,7 +1895,7 @@ horizontal_alignment = 1
 
 [node name="ImagemProximoMadeira" type="Sprite2D" parent="InterfaceBlocos/Tutorial" unique_id=1588476081]
 visible = false
-position = Vector2(583.125, 380.8125)
+position = Vector2(583.125, 393.8125)
 scale = Vector2(0.051425144, 0.058593765)
 texture = ExtResource("9_a5v4c")
 metadata/_edit_lock_ = true
@@ -1777,12 +1903,13 @@ metadata/_edit_lock_ = true
 [node name="BotaoProximo" type="Button" parent="InterfaceBlocos/Tutorial" unique_id=1707248981]
 visible = false
 offset_left = 522.0
-offset_top = 353.0
+offset_top = 366.0
 offset_right = 646.0
-offset_bottom = 411.0
+offset_bottom = 424.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ocbek")
 metadata/_edit_lock_ = true
 
+[connection signal="comando_adicionado" from="InterfaceBlocos/Control/AreaMontagem" to="." method="_on_comando_adicionado"]
 [connection signal="pressed" from="InterfaceBlocos/Tutorial/BotaoProximo" to="." method="_on_botao_proximo_pressed"]
 
 [editable path="InterfaceBlocos"]

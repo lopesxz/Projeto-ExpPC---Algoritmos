@@ -8,11 +8,18 @@ const LIMITE_BLOCOS = 14
 signal comando_selecionado
 
 @onready var cabecalho = $ColorRect
-@onready var campo_vezes = $ColorRect/HBox/Vezes
+@onready var campo_vezes:SpinBox = $ColorRect/HBox/Vezes
 @onready var corpo = $Corpo
 @onready var lista_interna = $Corpo/ListaInterna
 
+signal vezes_changed(vezes)
+
+func emitir_vezes_changed(vezes: float):
+	vezes_changed.emit(int(vezes))
+
 func _ready():
+	campo_vezes.value_changed.connect(emitir_vezes_changed)
+	
 	# O cabeçalho tem que caber o texto e o número, mas nunca fica menor que os outros blocos
 	cabecalho.custom_minimum_size.x = max(180, $ColorRect/HBox.get_combined_minimum_size().x + 10)
 

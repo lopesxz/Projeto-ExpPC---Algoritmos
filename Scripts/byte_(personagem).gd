@@ -13,13 +13,17 @@ var tempo_segundos = 0
 @onready var tuc_sound = $TucSound
 
 func _ready():
-	if "Fase_04" in get_tree().current_scene.scene_file_path:
+	var fase_atual = get_tree().current_scene.scene_file_path
+	if "Fase_04" in fase_atual:
+		direcao = Vector2.RIGHT
+	elif "Fase_05" in fase_atual:
 		direcao = Vector2.RIGHT
 	else:
 		direcao = Vector2.UP # Valor predefinido para as outras fases
-		posicao_inicial = position
-		sprite.region_enabled = true
-		atualizar_sprite()
+		
+	posicao_inicial = position
+	sprite.region_enabled = true
+	atualizar_sprite()
 	
 	# Conecta o botão de reiniciar automaticamente ao iniciar a fase de forma segura
 	var btn_reiniciar = _obter_ui("Reiniciar")
