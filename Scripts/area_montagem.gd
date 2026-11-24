@@ -56,8 +56,11 @@ func _on_executar_pressed():
 		GlobalJogo.bloco_selecionado = null
 
 	for bloco in $ListaBlocos.get_children():
-		if "nome_comando" in bloco:
-			lista_blocos.append(bloco)
+		lista_blocos.append(bloco)
+		if bloco.has_method("get_lista_comandos"):
+			var lista_comandos = bloco.get_lista_comandos()
+			blocos_para_log.append(lista_comandos)
+		elif "nome_comando" in bloco:
 			blocos_para_log.append(bloco.nome_comando)
 		
 	if lista_blocos.size() > 14:

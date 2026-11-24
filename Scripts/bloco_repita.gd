@@ -32,6 +32,15 @@ func obter_vezes():
 	campo_vezes.apply()
 	return int(campo_vezes.value)
 
+func get_lista_comandos():
+	var lista_comandos = {
+		"bloco": nome_comando,
+		"num_reps": obter_vezes(),
+		"comandos": obter_nome_blocos()
+	}
+	
+	return lista_comandos
+
 # Retorna os blocos que estão dentro do repita (na ordem em que aparecem)
 func obter_blocos():
 	var blocos = []
@@ -39,6 +48,13 @@ func obter_blocos():
 		if "nome_comando" in bloco and not bloco.is_queued_for_deletion():
 			blocos.append(bloco)
 	return blocos
+
+func obter_nome_blocos():
+	var blocos = obter_blocos()
+	var nome_blocos = []
+	for b in blocos:
+		nome_blocos.append(b.nome_comando)
+	return nome_blocos
 
 # Sem blocos dentro, o repita fica do tamanho dos outros. Com blocos, ele cresce.
 func _atualizar_corpo():

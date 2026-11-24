@@ -102,14 +102,6 @@ func _on_area_montagem_passos_prontos(lista_blocos):
 	if cena_atual and "scene_file_path" in cena_atual:
 		var nome_fase = cena_atual.scene_file_path.get_file().get_basename()
 		GerenciadorLog.fase_atual = nome_fase
-	# Se o log atualizar o dicionário por função, podes chamar aqui também:
-	# GerenciadorLog.atualizar_fase_tentativa(nome_fase)
-	var blocos_para_log = []
-	for item in lista_blocos:
-		if item is Node and "nome_comando" in item:
-			blocos_para_log.append(item.nome_comando)
-	
-	GerenciadorLog.definir_lista_blocos_tentativa(blocos_para_log)
 
 	for item in lista_blocos:
 		var comando = ""

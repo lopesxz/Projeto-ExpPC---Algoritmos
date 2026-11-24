@@ -52,7 +52,7 @@ func reiniciar_e_continuar_cronometro() -> void:
 
 func definir_lista_blocos_tentativa(lista: Array) -> void:
 	tentativa_atual.lista_blocos_intermediarios = lista.duplicate()
-	
+
 func registrar_clique_botao(nome_botao: String) -> void:
 	match nome_botao.to_lower():
 		"apagar_tudo", "apagar_todos":
