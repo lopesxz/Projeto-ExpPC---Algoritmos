@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d13rir03pceub"
-path="res://.godot/imported/ImagemEntendiMadeira.png-612c34d6fde28f9412806a732a299fe4.ctex"
+path="res://.godot/imported/ImagemPróximoMadeira.png-6ffba949dde5d6331faf1aeb62cae9f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagens/ImagemEntendiMadeira.png"
-dest_files=["res://.godot/imported/ImagemEntendiMadeira.png-612c34d6fde28f9412806a732a299fe4.ctex"]
+source_file="res://Imagens/ImagemPróximoMadeira.png"
+dest_files=["res://.godot/imported/ImagemPróximoMadeira.png-6ffba949dde5d6331faf1aeb62cae9f6.ctex"]
 
 [params]
 

@@ -6,9 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://crdx6sojghgm6" path="res://Cenas/Fases/byte_(personagem).tscn" id="3_vt210"]
 [ext_resource type="PackedScene" uid="uid://bjcnsbiqoy4o2" path="res://Cenas/Areas/interface_blocos.tscn" id="4_7g7nw"]
 [ext_resource type="Texture2D" uid="uid://2aarwnyfp6h5" path="res://Imagens/Painel Madeira Tutorial.png" id="6_7g7nw"]
-[ext_resource type="Script" uid="uid://cx4313p8papv6" path="res://Scripts/fase_1.gd" id="6_j5ots"]
 [ext_resource type="Texture2D" uid="uid://d22trypxr30op" path="res://Imagens/aponta.png" id="8_a5v4c"]
-[ext_resource type="Texture2D" uid="uid://b6pjbici257la" path="res://Imagens/BotaoOK.png" id="9_a5v4c"]
+[ext_resource type="Texture2D" uid="uid://d13rir03pceub" path="res://Imagens/ImagemPróximoMadeira.png" id="9_a5v4c"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gh7na"]
 
@@ -1592,6 +1591,8 @@ _data = {
 &"aponta_apagartudo": SubResource("Animation_li2s5")
 }
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ocbek"]
+
 [node name="Node2D" type="Node2D" unique_id=792605036]
 script = ExtResource("1_vt210")
 
@@ -1650,20 +1651,31 @@ offset_right = 376.0
 offset_bottom = 192.0
 
 [node name="Tutorial" type="CanvasLayer" parent="InterfaceBlocos" unique_id=1726652705]
-script = ExtResource("6_j5ots")
 
 [node name="PainelMadeiraTutorial" type="Sprite2D" parent="InterfaceBlocos/Tutorial" unique_id=515788208]
+visible = false
 position = Vector2(576, 293)
 scale = Vector2(0.13478713, 0.13229166)
 texture = ExtResource("6_7g7nw")
+metadata/_edit_lock_ = true
 
 [node name="DisableTopUI" type="Label" parent="InterfaceBlocos/Tutorial" unique_id=1183434120]
-offset_left = 733.0
+visible = false
+offset_left = 647.0
 offset_right = 1156.0
 offset_bottom = 62.0
 mouse_filter = 0
 
+[node name="DisableTopUI2" type="Label" parent="InterfaceBlocos/Tutorial" unique_id=1640639072]
+visible = false
+offset_left = 643.0
+offset_top = 405.0
+offset_right = 1156.0
+offset_bottom = 646.0
+mouse_filter = 0
+
 [node name="Aponta" type="Sprite2D" parent="InterfaceBlocos/Tutorial" unique_id=2081045120]
+visible = false
 position = Vector2(607.00006, 50.00001)
 rotation = 0.7679449
 scale = Vector2(0.32601547, 0.3160156)
@@ -1677,14 +1689,14 @@ libraries/ = SubResource("AnimationLibrary_ocbek")
 visible = false
 offset_left = 383.0
 offset_top = 238.0
-offset_right = 792.0
+offset_right = 756.0
 offset_bottom = 374.0
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 18
 text = "Olha só, um novo comando surgiu..
-Ele se chama REPITA, e será muito 
-útil para ajudar Mauro."
+ Ele se chama REPITA, e será muito
+ útil para ajudar Mauro."
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1697,8 +1709,8 @@ offset_bottom = 351.0
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 18
-text = "Usando ele, você evita de arrastar
-o mesmo comando várias vezes 
+text = "Usando ele, você evita o arraste
+ do mesmo comando várias vezes 
 na sua área de montagem.."
 horizontal_alignment = 1
 
@@ -1712,7 +1724,7 @@ size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 18
 text = "Para usá-lo é simples!
-Arraste-o para área de montagem."
+ Arraste-o para área de montagem."
 horizontal_alignment = 1
 
 [node name="AdicioneLabel" type="Label" parent="InterfaceBlocos/Tutorial" unique_id=946614977]
@@ -1724,9 +1736,8 @@ offset_bottom = 351.0
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 18
-text = "Agora adicione, dentro dele, o
- bloco que você quer executar
-"
+text = "Agora adicione, dentro dele,
+ o bloco que você quer executar"
 horizontal_alignment = 1
 
 [node name="DefinaQtdLabel" type="Label" parent="InterfaceBlocos/Tutorial" unique_id=1671335068]
@@ -1738,28 +1749,40 @@ offset_bottom = 351.0
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 18
-text = "Agora defina a quantidade
-de vezes que os blocos serão 
-executados.."
+text = "Agora defina a quantidade de vezes
+ que os blocos serão executados.."
 horizontal_alignment = 1
 
 [node name="MuitoBemLabel" type="Label" parent="InterfaceBlocos/Tutorial" unique_id=1316222293]
 visible = false
-offset_left = 375.0
-offset_top = 263.0
-offset_right = 772.0
-offset_bottom = 347.0
+offset_left = 406.0
+offset_top = 261.0
+offset_right = 746.0
+offset_bottom = 346.0
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 18
-text = "Muito bem!
-Agora utilize os outros blocos
-que você já conhece e ajude o Mauro!"
+theme_override_font_sizes/font_size = 17
+text = "Muito bem! 
+Agora utilize os outros blocos que você
+ já conhece e ajude o Mauro!"
 horizontal_alignment = 1
 
-[node name="BotaoOk" type="Sprite2D" parent="InterfaceBlocos/Tutorial" unique_id=661466410]
-position = Vector2(578, 376.25)
-scale = Vector2(0.03320313, 0.031982414)
+[node name="ImagemProximoMadeira" type="Sprite2D" parent="InterfaceBlocos/Tutorial" unique_id=1588476081]
+visible = false
+position = Vector2(583.125, 380.8125)
+scale = Vector2(0.051425144, 0.058593765)
 texture = ExtResource("9_a5v4c")
+metadata/_edit_lock_ = true
+
+[node name="BotaoProximo" type="Button" parent="InterfaceBlocos/Tutorial" unique_id=1707248981]
+visible = false
+offset_left = 522.0
+offset_top = 353.0
+offset_right = 646.0
+offset_bottom = 411.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ocbek")
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="InterfaceBlocos/Tutorial/BotaoProximo" to="." method="_on_botao_proximo_pressed"]
 
 [editable path="InterfaceBlocos"]
