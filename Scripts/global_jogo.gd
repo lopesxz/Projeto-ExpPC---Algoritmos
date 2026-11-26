@@ -15,4 +15,4 @@ func proxima_fase() -> void:
 			print("Fim das fases! A voltar ao menu principal...")
 			get_tree().change_scene_to_file("res://Cenas/Menu/menu_principal.tscn")
 	else:
-		print("Nao ha nodo objetivo!!s")
+		print("Nao ha nodo objetivo!!")

@@ -1769,16 +1769,19 @@ offset_bottom = 192.0
 [node name="Tutorial" type="CanvasLayer" parent="InterfaceBlocos" unique_id=1726652705]
 
 [node name="Mao" type="Sprite2D" parent="InterfaceBlocos/Tutorial" unique_id=265360451]
+visible = false
 position = Vector2(892, 409.00003)
 scale = Vector2(0.33203125, 0.33203125)
 texture = ExtResource("6_ocbek")
 
 [node name="Aponta" type="Sprite2D" parent="InterfaceBlocos/Tutorial" unique_id=831032435]
+visible = false
 position = Vector2(846, 157)
 scale = Vector2(0.33203125, 0.33203125)
 texture = ExtResource("8_a5v4c")
 
 [node name="PainelMadeiraTutorial" type="Sprite2D" parent="InterfaceBlocos/Tutorial" unique_id=515788208]
+visible = false
 position = Vector2(576, 293)
 scale = Vector2(0.16, 0.157)
 texture = ExtResource("6_7g7nw")
@@ -1821,7 +1824,7 @@ size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 18
 text = "Olha só, um novo comando surgiu..
- Ele se chama REPITA, e será muito
+Ele se chama REPITA, e será muito
  útil para ajudar Mauro."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1836,7 +1839,7 @@ size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 18
 text = "Usando ele, você evita o arraste
- do mesmo comando várias vezes 
+do mesmo comando várias vezes 
 na sua área de montagem.."
 horizontal_alignment = 1
 
@@ -1850,7 +1853,7 @@ size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 18
 text = "Para usá-lo é simples!
- Arraste-o para área de montagem."
+Arraste-o para área de montagem."
 horizontal_alignment = 1
 
 [node name="AdicioneLabel" type="Label" parent="InterfaceBlocos/Tutorial" unique_id=946614977]
@@ -1863,7 +1866,7 @@ size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 18
 text = "Agora adicione, dentro dele,
- o bloco que você quer executar"
+o bloco que você quer executar"
 horizontal_alignment = 1
 
 [node name="DefinaQtdLabel" type="Label" parent="InterfaceBlocos/Tutorial" unique_id=1671335068]
@@ -1876,21 +1879,21 @@ size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 18
 text = "Agora defina a quantidade de vezes
- que os blocos serão executados.."
+que os blocos serão executados.."
 horizontal_alignment = 1
 
 [node name="MuitoBemLabel" type="Label" parent="InterfaceBlocos/Tutorial" unique_id=1316222293]
 visible = false
 offset_left = 406.0
 offset_top = 261.0
-offset_right = 746.0
-offset_bottom = 346.0
+offset_right = 764.0
+offset_bottom = 358.0
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 17
 text = "Muito bem! 
 Agora utilize os outros blocos que você
- já conhece e ajude o Mauro!"
+já conhece e ajude o Mauro!"
 horizontal_alignment = 1
 
 [node name="ImagemProximoMadeira" type="Sprite2D" parent="InterfaceBlocos/Tutorial" unique_id=1588476081]
