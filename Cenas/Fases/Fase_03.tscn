@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://btx0xkruhnh15" path="res://Scripts/objetivo.gd" id="2_6kgsy"]
 [ext_resource type="PackedScene" uid="uid://crdx6sojghgm6" path="res://Cenas/Fases/byte_(personagem).tscn" id="2_x8aig"]
 [ext_resource type="PackedScene" uid="uid://bjcnsbiqoy4o2" path="res://Cenas/Areas/interface_blocos.tscn" id="3_6kgsy"]
+[ext_resource type="PackedScene" uid="uid://bxdk1ts21tcnh" path="res://Cenas/Fases/Fase_04.tscn" id="4_fase04"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gh7na"]
 
@@ -1546,6 +1547,7 @@ tile_set = SubResource("TileSet_g4v7s")
 [node name="Objetivo" type="Area2D" parent="TileMapLayer" unique_id=689093926 groups=["objetivo_group"]]
 position = Vector2(480, 228)
 script = ExtResource("2_6kgsy")
+next_scene = ExtResource("4_fase04")
 
 [node name="Byte (Personagem)" parent="." unique_id=1885214350 instance=ExtResource("2_x8aig")]
 position = Vector2(224, 544)

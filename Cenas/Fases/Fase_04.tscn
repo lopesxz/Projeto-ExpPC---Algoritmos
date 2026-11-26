@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://3umkl53db4xl" path="res://Imagens/sokoban_tilesheet.png" id="1_jbylx"]
 [ext_resource type="Script" uid="uid://btx0xkruhnh15" path="res://Scripts/objetivo.gd" id="2_derdl"]
+[ext_resource type="PackedScene" uid="uid://qshq7senr3kn" path="res://Cenas/Fases/Fase_05.tscn" id="3_derdl"]
 [ext_resource type="PackedScene" uid="uid://crdx6sojghgm6" path="res://Cenas/Fases/byte_(personagem).tscn" id="3_gaq2y"]
 [ext_resource type="PackedScene" uid="uid://bjcnsbiqoy4o2" path="res://Cenas/Areas/interface_blocos.tscn" id="4_q7yvq"]
 
@@ -1546,6 +1547,7 @@ tile_set = SubResource("TileSet_g4v7s")
 [node name="Objetivo" type="Area2D" parent="TileMapLayer" unique_id=689093926 groups=["objetivo_group"]]
 position = Vector2(349, 477)
 script = ExtResource("2_derdl")
+next_scene = ExtResource("3_derdl")
 
 [node name="Byte (Personagem)" parent="." unique_id=1885214350 instance=ExtResource("3_gaq2y")]
 position = Vector2(158, 96)

@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://btx0xkruhnh15" path="res://Scripts/objetivo.gd" id="2_6sgu3"]
 [ext_resource type="PackedScene" uid="uid://crdx6sojghgm6" path="res://Cenas/Fases/byte_(personagem).tscn" id="3_vt210"]
 [ext_resource type="PackedScene" uid="uid://bjcnsbiqoy4o2" path="res://Cenas/Areas/interface_blocos.tscn" id="4_7g7nw"]
+[ext_resource type="PackedScene" uid="uid://ea7mhmupguda" path="res://Cenas/Fases/Fase_06.tscn" id="4_p224q"]
 [ext_resource type="Texture2D" uid="uid://2aarwnyfp6h5" path="res://Imagens/Painel Madeira Tutorial.png" id="6_7g7nw"]
 [ext_resource type="Texture2D" uid="uid://ci4g7kknkefas" path="res://Imagens/aberta.png" id="6_ocbek"]
 [ext_resource type="Texture2D" uid="uid://d22trypxr30op" path="res://Imagens/aponta.png" id="8_a5v4c"]
@@ -1719,6 +1720,7 @@ tile_set = SubResource("TileSet_g4v7s")
 [node name="Objetivo" type="Area2D" parent="TileMapLayer" unique_id=689093926 groups=["objetivo_group"]]
 position = Vector2(283, 224)
 script = ExtResource("2_6sgu3")
+next_scene = ExtResource("4_p224q")
 
 [node name="Byte (Personagem)" parent="." unique_id=1885214350 instance=ExtResource("3_vt210")]
 position = Vector2(95, 95)
